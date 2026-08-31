@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGConnect - Singapore Accountants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --n:#002244;--n2:#003366;--r:#C41E3A;--r2:#e8294a;
+  --gold:#C9A84C;--g:#1a6b3c;
+  --bg:#FAF8F5;--white:#fff;--ink:#111;
+  --muted:#7A7A7A;--border:#E8E4DF;--rad:16px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --display:'DM Serif Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+
+/* ── PAGE SYSTEM ── */
+.pg{display:none;}.pg.on{display:block;}
+
+/* ═══════════════════════
+   LANDING
+═══════════════════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,248,245,.92);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:18px 56px;border-bottom:1px solid rgba(0,0,0,.06);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-mark{width:32px;height:32px;background:var(--r);border-radius:10px;display:flex;align-items:center;justify-content:center;}
+.nav-mark i{color:#fff;font-size:14px;}
+.nav-brand{color:var(--n);font-size:14px;font-weight:600;letter-spacing:-.3px;}
+.nav-brand-s{color:var(--muted);font-size:9px;letter-spacing:.8px;text-transform:uppercase;display:block;margin-top:1px;}
+.nav-links{display:flex;gap:36px;}
+.nav-link{color:var(--muted);font-size:13px;font-weight:500;text-decoration:none;transition:color .15s;cursor:pointer;}
+.nav-link:hover{color:var(--n);}
+.nav-cta{padding:10px 22px;background:var(--n);border:none;border-radius:100px;color:#fff;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--font);transition:all .2s;}
+.nav-cta:hover{background:#003d7a;transform:translateY(-1px);}
+
+.hero{min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:140px 80px 80px;position:relative;overflow:hidden;}
+.hero-inner{position:relative;z-index:1;max-width:760px;text-align:center;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(0,34,68,.05);border:none;border-radius:100px;padding:6px 16px 6px 8px;font-size:11px;font-weight:500;color:var(--n);letter-spacing:.03em;margin-bottom:36px;}
+.hero-pill span{width:18px;height:18px;background:rgba(26,107,60,.12);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;}
+.hero-pill span::after{content:'';width:6px;height:6px;background:#1a6b3c;border-radius:50%;display:block;}
+.hero-h{font-family:var(--display);font-size:clamp(52px,6vw,84px);font-weight:400;color:var(--n);line-height:1.04;margin-bottom:24px;letter-spacing:-.3px;}
+.hero-h em{font-style:italic;color:var(--r);}
+.hero-sub{font-size:17px;color:var(--muted);line-height:1.8;max-width:520px;margin:0 auto 48px;font-weight:400;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.btn-hero-p{padding:15px 34px;background:var(--n);border:none;border-radius:100px;font-size:14px;font-weight:500;color:#fff;cursor:pointer;font-family:var(--font);transition:all .25s;display:flex;align-items:center;gap:9px;}
+.btn-hero-p:hover{background:#003d7a;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,34,68,.22);}
+.btn-hero-s{padding:15px 28px;background:transparent;border:1.5px solid #D0CBC4;border-radius:100px;font-size:14px;font-weight:500;color:var(--n);cursor:pointer;font-family:var(--font);transition:all .2s;}
+.btn-hero-s:hover{border-color:var(--n);background:rgba(0,34,68,.03);}
+.hero-stats{display:flex;gap:0;justify-content:center;margin-top:56px;padding-top:40px;border-top:1px solid var(--border);}
+.hero-stat{padding:0 40px 0 0;margin-right:40px;border-right:1px solid var(--border);}
+.hero-stat:last-child{border-right:none;margin-right:0;}
+.hero-stat-n{font-family:var(--display);font-size:36px;font-weight:400;color:var(--n);display:block;}
+.hero-stat-l{font-size:10px;font-weight:500;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.1em;}
+
+
+/* HOW IT WORKS */
+.section{padding:100px 80px;max-width:1200px;margin:0 auto;}
+.sec-eyebrow{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.sec-eyebrow::before{content:'';width:20px;height:1px;background:var(--muted);border-radius:1px;}
+.sec-title{font-family:var(--display);font-size:clamp(32px,4vw,54px);font-weight:400;color:var(--n);line-height:1.06;margin-bottom:18px;letter-spacing:-.5px;}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:440px;font-weight:400;}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px;}
+.step-box{background:var(--white);border-radius:20px;border:1px solid var(--border);padding:30px 24px;position:relative;transition:all .25s;}
+.step-box:hover{box-shadow:0 16px 48px rgba(0,34,68,.07);transform:translateY(-4px);}
+.step-num{font-family:var(--display);font-size:48px;font-weight:400;color:rgba(0,34,68,.08);line-height:1;margin-bottom:20px;}
+.step-ico{width:40px;height:40px;border-radius:12px;background:#EBF0F8;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.step-ico i{font-size:17px;color:var(--n);}
+.step-name{font-size:14px;font-weight:600;color:var(--n);margin-bottom:6px;letter-spacing:-.1px;}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.7;}
+
+/* SERVICES */
+#services{background:#0a0f1a;padding-bottom:0;}
+.svcs-inner{max-width:1100px;margin:0 auto;padding:80px 48px 40px;}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0;}
+.svc-card-big{position:relative;min-height:500px;overflow:hidden;cursor:pointer;}
+.svc-card-sm{position:relative;min-height:380px;overflow:hidden;cursor:pointer;}
+.svc-overlay{position:absolute;inset:0;transition:background .3s;}
+.svc-content{position:relative;z-index:1;padding:38px;height:100%;display:flex;flex-direction:column;justify-content:space-between;}
+.svc-freq{display:inline-flex;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:4px 14px;font-size:10px;color:rgba(255,255,255,.6);margin-bottom:16px;}
+.svc-ico-big{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.svc-ico-big i{font-size:21px;color:#fff;}
+.svc-h{font-family:var(--font);font-size:22px;font-weight:600;color:#fff;line-height:1.1;margin-bottom:10px;letter-spacing:-.3px;}
+.svc-p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px;}
+.svc-checks{display:flex;flex-direction:column;gap:7px;margin-bottom:24px;}
+.svc-check-row{display:flex;align-items:center;gap:8px;}
+.svc-check-dot{width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.svc-check-dot i{font-size:9px;color:#fff;}
+.svc-check-text{font-size:12px;color:rgba(255,255,255,.65);}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.svc-tag{font-size:10px;font-weight:600;color:rgba(255,255,255,.6);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);padding:3px 12px;border-radius:100px;}
+.svc-btn-sm{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.2);border-radius:100px;font-size:12px;font-weight:500;color:#fff;cursor:pointer;font-family:var(--font);transition:all .15s;width:fit-content;}
+.svc-btn-primary{background:var(--r);border-color:var(--r);}
+.svc-btn-primary:hover{background:var(--r2);}
+.svc-res-dir{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.07);padding:30px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+
+/* PRICING */
+.tiers-section{padding:100px 80px;background:var(--bg);}
+.tiers-inner{max-width:1200px;margin:0 auto;}
+.tiers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:48px;}
+.tier-card{border:1px solid var(--border);border-radius:20px;padding:24px 20px;background:var(--white);position:relative;transition:all .22s;}
+.tier-card:hover{border-color:#C5BEB6;box-shadow:0 12px 36px rgba(0,0,0,.07);}
+.tier-card.popular{border-color:var(--n);background:var(--n);}
+.tier-card.popular::before{content:'Most popular';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--r);color:#fff;font-size:9px;font-weight:500;padding:3px 12px;border-radius:100px;white-space:nowrap;letter-spacing:.05em;}
+.tier-n{font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.tier-card.popular .tier-n{color:rgba(255,255,255,.4);}
+.tier-p{font-family:var(--display);font-size:24px;font-weight:400;color:var(--n);margin-bottom:2px;}
+.tier-card.popular .tier-p{color:#fff;}
+.tier-p span{font-family:var(--font);font-size:11px;font-weight:400;color:var(--muted);}
+.tier-card.popular .tier-p span{color:rgba(255,255,255,.4);}
+.tier-d{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
+.tier-card.popular .tier-d{color:rgba(255,255,255,.5);}
+.tier-f{font-size:11px;color:var(--ink);display:flex;align-items:flex-start;gap:6px;margin-bottom:6px;}
+.tier-card.popular .tier-f{color:rgba(255,255,255,.75);}
+.tier-f i{font-size:11px;color:var(--g);flex-shrink:0;margin-top:2px;}
+.tier-card.popular .tier-f i{color:#6fcf97;}
+.tier-btn{width:100%;padding:11px;border-radius:100px;font-size:11px;font-weight:500;cursor:pointer;border:1.5px solid var(--border);background:transparent;color:var(--n);font-family:var(--font);transition:all .18s;margin-top:18px;letter-spacing:.02em;}
+.tier-btn:hover{border-color:var(--n);background:rgba(0,34,68,.04);}
+.tier-card.popular .tier-btn{background:#fff;border-color:#fff;color:var(--n);}
+.tier-card.popular .tier-btn:hover{background:rgba(255,255,255,.9);}
+
+/* CTA */
+.cta-section{background:var(--n);padding:100px 80px;text-align:center;}
+.cta-inner{max-width:640px;margin:0 auto;}
+footer{background:#0a0f1a;padding:28px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.05);}
+footer .f-brand{color:rgba(255,255,255,.3);font-size:12px;}
+footer .f-links{display:flex;gap:24px;}
+footer .f-link{color:rgba(255,255,255,.25);font-size:11px;text-decoration:none;transition:color .15s;}
+footer .f-link:hover{color:rgba(255,255,255,.5);}
+
+/* ═══════════════════════
+   ONBOARDING SHELL
+═══════════════════════ */
+.ob-shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
+
+/* LEFT PANEL */
+.ob-left{width:320px;min-width:320px;background:var(--n);display:flex;flex-direction:column;padding:38px 32px;position:relative;overflow:hidden;}
+.ob-left::before{content:'';position:absolute;bottom:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(196,30,58,.14) 0%,transparent 65%);pointer-events:none;}
+.ob-logo{display:flex;align-items:center;gap:9px;margin-bottom:40px;position:relative;z-index:1;}
+.ob-logo-m{width:30px;height:30px;background:var(--r);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.ob-logo-m i{color:#fff;font-size:13px;}
+.ob-brand{color:#fff;font-size:13px;font-weight:600;}
+.ob-brand-s{color:rgba(255,255,255,.3);font-size:9px;letter-spacing:.4px;}
+.ob-h{font-family:var(--font);font-size:22px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:8px;position:relative;z-index:1;letter-spacing:-.3px;}
+.ob-h em{font-style:italic;color:rgba(255,255,255,.35);}
+.ob-s{font-size:12px;color:rgba(255,255,255,.38);line-height:1.65;margin-bottom:36px;position:relative;z-index:1;}
+
+/* Page indicators */
+.ob-pages{display:flex;flex-direction:column;gap:2px;position:relative;z-index:1;}
+.ob-pg-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;}
+.ob-pg-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.ob-pg-circ{width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:rgba(255,255,255,.3);transition:all .3s;flex-shrink:0;}
+.ob-pg-circ.done{background:var(--g);border-color:var(--g);color:#fff;}
+.ob-pg-circ.active{background:var(--r);border-color:var(--r);color:#fff;}
+.ob-pg-conn{width:1px;height:22px;background:rgba(255,255,255,.08);margin:3px 0;}
+.ob-pg-text{padding-top:3px;}
+.ob-pg-num{font-size:9px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px;transition:color .3s;}
+.ob-pg-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.28);transition:color .3s;line-height:1.2;}
+.ob-pg-item.active .ob-pg-name,.ob-pg-item.active .ob-pg-num{color:#fff;}
+.ob-pg-item.done .ob-pg-name,.ob-pg-item.done .ob-pg-num{color:rgba(255,255,255,.55);}
+.ob-bot{margin-top:auto;font-size:11px;color:rgba(255,255,255,.2);display:flex;align-items:center;gap:6px;position:relative;z-index:1;}
+
+/* ═══════════════════════════════════
+   ONBOARDING - new shell (no cart col)
+═══════════════════════════════════ */
+.ob-shell{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.ob-left{
+  background:var(--n);
+  display:flex;flex-direction:column;
+  padding:36px 28px 28px;
+  position:sticky;top:0;height:100vh;overflow:hidden;
+}
+.ob-left::before{
+  content:'';position:absolute;
+  bottom:-80px;right:-80px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,30,58,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.ob-logo{display:flex;align-items:center;gap:9px;margin-bottom:40px;position:relative;z-index:1;}
+.ob-logo-m{width:28px;height:28px;background:var(--r);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.ob-logo-m i{color:#fff;font-size:12px;}
+.ob-brand{color:#fff;font-size:13px;font-weight:600;}
+.ob-brand-s{color:rgba(255,255,255,.3);font-size:9px;letter-spacing:.4px;}
+.ob-pages{display:flex;flex-direction:column;position:relative;z-index:1;flex:1;}
+.ob-pg-item{display:flex;gap:13px;align-items:flex-start;}
+.ob-pg-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.ob-pg-circ{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.14);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:rgba(255,255,255,.2);
+  transition:all .3s;flex-shrink:0;
+}
+.ob-pg-circ.done{background:var(--g);border-color:var(--g);color:#fff;}
+.ob-pg-circ.active{background:var(--r);border-color:var(--r);color:#fff;}
+.ob-pg-conn{width:1px;height:30px;background:rgba(255,255,255,.07);margin:4px 0;}
+.ob-pg-text{padding-top:5px;padding-bottom:10px;}
+.ob-pg-num{font-size:9px;color:rgba(255,255,255,.2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:2px;}
+.ob-pg-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.25);line-height:1.3;transition:color .3s;}
+.ob-pg-item.active .ob-pg-name{color:#fff;}
+.ob-pg-item.active .ob-pg-num{color:rgba(255,255,255,.5);}
+.ob-pg-item.done .ob-pg-name{color:rgba(255,255,255,.48);}
+.ob-pg-item.done .ob-pg-num{color:rgba(255,255,255,.3);}
+.ob-bot{
+  font-size:10px;color:rgba(255,255,255,.2);
+  display:flex;align-items:center;gap:6px;
+  padding-top:18px;border-top:1px solid rgba(255,255,255,.06);
+  position:relative;z-index:1;
+}
+
+/* MAIN */
+.ob-main{
+  display:flex;flex-direction:column;
+  background:var(--bg);min-height:100vh;
+}
+
+/* Topbar */
+/* ob-topbar moved to onboarding shell CSS */
+.ob-topbar-left{display:flex;align-items:center;gap:14px;}
+.ob-page-eyebrow{font-size:10px;font-weight:700;color:var(--r);text-transform:uppercase;letter-spacing:.5px;}
+.ob-page-sep{width:1px;height:14px;background:var(--border);}
+.ob-page-title{font-size:13px;font-weight:600;color:var(--n);}
+.ob-topbar-right{display:flex;align-items:center;gap:12px;}
+.ob-svc-count{
+  font-size:11px;font-weight:600;color:var(--n);
+  background:var(--white);border:1px solid var(--border);
+  border-radius:4px;padding:5px 13px;
+  display:flex;align-items:center;gap:6px;
+  border-radius:100px;
+}
+.ob-svc-count-num{
+  background:var(--n);color:#fff;
+  font-size:10px;font-weight:700;
+  padding:1px 6px;border-radius:100px;
+}
+.ob-prog-line{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:rgba(0,34,68,.06);
+}
+.ob-prog-fill{
+  height:100%;background:var(--r);
+  transition:width .55s cubic-bezier(.4,0,.2,1);
+}
+
+/* Content */
+.ob-content{
+  flex:1;padding:52px 52px 120px;
+  display:flex;justify-content:center;
+}
+.ob-form{
+  width:100%;max-width:620px;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Floating footer */
+.ob-footer{
+  position:fixed;bottom:0;left:260px;right:0;
+  background:rgba(246,245,241,.95);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-top:1px solid rgba(0,34,68,.08);
+  padding:12px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  z-index:39;
+}
+.ob-footer-chips{display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex:1;min-width:0;}
+.ob-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:600;color:var(--n);
+  background:var(--white);border:1px solid var(--border);
+  padding:4px 12px;border-radius:100px;white-space:nowrap;
+}
+.ob-chip i{font-size:10px;}
+.ob-chip-empty{font-size:11px;color:var(--muted);}
+.ob-footer-right{display:flex;align-items:center;gap:20px;flex-shrink:0;}
+.ob-price{text-align:right;}
+.ob-price-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+.ob-price-val{font-size:22px;font-weight:800;color:var(--n);line-height:1;letter-spacing:-.5px;}
+.ob-price-sub{font-size:9px;color:var(--muted);}
+
+/* ── QUESTION TYPOGRAPHY ── */
+.q-eye{display:flex;align-items:center;gap:7px;margin-bottom:10px;}
+.q-eye-line{width:20px;height:2px;background:var(--r);border-radius:1px;}
+.q-eye-t{font-size:10px;font-weight:600;color:var(--r);letter-spacing:.8px;text-transform:uppercase;}
+.q-title{font-family:var(--font);font-size:32px;font-weight:400;color:var(--n);line-height:1.1;margin-bottom:10px;letter-spacing:-.8px;}
+.q-sub{font-size:13px;font-weight:400;color:var(--muted);line-height:1.6;margin-bottom:28px;}
+
+/* Field groups */
+.field-group{margin-top:28px;}
+.field-group:first-child{margin-top:0;}
+.field-label{
+  font-size:10px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.6px;
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.field-num{
+  font-size:9px;font-weight:700;
+  background:var(--r);color:#fff;
+  padding:2px 7px;border-radius:100px;
+}
+.field-note{
+  font-size:11px;color:var(--muted);
+  background:var(--white);border:1px solid var(--border);
+  border-radius:8px;padding:9px 13px;
+  line-height:1.55;margin-top:8px;
+  display:flex;align-items:flex-start;gap:7px;
+}
+.field-note i{font-size:12px;flex-shrink:0;margin-top:1px;color:var(--muted);}
+
+/* Selection cards */
+.sel-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.sel-3,.sel-list{display:flex;flex-direction:column;gap:8px;}
+.sel-card{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 18px;border-radius:14px;
+  border:1.5px solid var(--border);
+  background:var(--white);cursor:pointer;
+  transition:all .2s;
+  user-select:none;
+}
+.sel-card:hover{border-color:#C5BEB6;box-shadow:0 4px 16px rgba(0,0,0,.05);transform:translateY(-1px);}
+.sel-card.on{border-color:var(--n);background:#fff;box-shadow:0 6px 20px rgba(0,34,68,.1);}
+.sel-ico{
+  width:40px;height:40px;border-radius:12px;
+  background:#F0EDE8;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;transition:all .2s;
+}
+.sel-ico i{font-size:16px;color:var(--n);}
+.sel-card.on .sel-ico{background:var(--n);}
+.sel-card.on .sel-ico i{color:#fff;}
+.sel-card-body{flex:1;}
+.sel-name{font-size:13px;font-weight:600;color:var(--n);letter-spacing:-.1px;}
+.sel-desc{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5;}
+.sel-dot{
+  width:20px;height:20px;border-radius:50%;
+  border:1.5px solid #D0C8C0;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.sel-dot i{font-size:9px;color:transparent;}
+.sel-card.on .sel-dot{background:var(--n);border-color:var(--n);}
+.sel-card.on .sel-dot i{color:#fff;}
+
+/* Pills */
+.pill-wrap{display:flex;flex-wrap:wrap;gap:7px;}
+.sel-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:9px 18px;border-radius:100px;
+  border:1.5px solid var(--border);background:var(--white);
+  cursor:pointer;font-size:12px;font-weight:500;color:var(--ink);
+  transition:all .2s;user-select:none;
+}
+.sel-pill i{font-size:12px;color:var(--muted);}
+.sel-pill:hover{border-color:#B5AFA8;background:#F5F2EE;}
+.sel-pill.on{background:var(--n);border-color:var(--n);color:#fff;}
+.sel-pill.on i{color:rgba(255,255,255,.6);}
+
+/* Branch question */
+.branch-box{
+  background:#F5F2EE;border:1px solid var(--border);
+  border-radius:14px;padding:20px 22px;margin-top:10px;
+}
+.branch-q{font-size:14px;font-weight:700;color:var(--n);margin-bottom:4px;letter-spacing:-.2px;}
+.branch-s{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+.branch-btns{display:flex;gap:8px;}
+.branch-btn{
+  flex:1;padding:12px 14px;border-radius:100px;font-size:12px;font-weight:600;
+  cursor:pointer;border:1.5px solid #E2E4E9;background:var(--white);
+  color:var(--ink);font-family:var(--font);
+  transition:all .18s;display:flex;align-items:center;justify-content:center;gap:7px;letter-spacing:.01em;
+}
+.branch-btn:hover{border-color:#a0a8b8;background:#F8F9FB;}
+.branch-btn.yes{background:var(--n);border-color:var(--n);color:#fff;}
+.branch-btn.no{background:var(--r);border-color:var(--r);color:#fff;}
+.branch-result{
+  margin-top:10px;padding:9px 13px;border-radius:8px;
+  font-size:11px;line-height:1.5;display:flex;align-items:center;gap:7px;
+}
+.branch-result.yes-r{display:none;}
+.branch-result.no-r{background:#fdeaea;color:var(--r);}
+
+/* Service sections */
+.svc-section{margin-top:32px;}
+.svc-sec-hdr{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:12px;
+}
+.svc-sec-label{font-size:10px;font-weight:700;color:var(--n);text-transform:uppercase;letter-spacing:.6px;}
+.svc-sec-tag{font-size:9px;font-weight:600;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:2px 8px;border-radius:100px;}
+.svc-sec-line{flex:1;height:1px;background:var(--border);}
+
+/* Bands */
+.info-band{background:#EBF0F8;border-left:3px solid var(--n);border-radius:0 12px 12px 0;padding:12px 16px;font-size:12px;color:var(--n);line-height:1.7;margin:12px 0;}
+.warn-band{background:#FBF6E8;border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:12px 16px;font-size:12px;color:#7A5C00;line-height:1.7;margin:12px 0;}
+.note-band{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:11px 15px;font-size:11px;color:var(--muted);line-height:1.65;margin:8px 0;}
+
+/* Input */
+.t-inp{
+  width:100%;padding:13px 16px;border:1.5px solid var(--border);
+  border-radius:12px;font-size:14px;color:var(--ink);
+  background:var(--white);outline:none;font-family:var(--font);
+  transition:border .2s,box-shadow .2s;margin-top:7px;display:block;
+}
+.t-inp:focus{border-color:var(--n);box-shadow:0 0 0 3px rgba(0,34,68,.06);}
+.t-inp::placeholder{color:#B8B3AE;}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:var(--font);transition:all .2s;}
+.btn-n{background:var(--n);color:#fff;}.btn-n:hover{background:#003d7a;transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,34,68,.2);}
+.btn-r{background:var(--r);color:#fff;}.btn-r:hover{background:var(--r2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(196,30,58,.3);}
+.btn-g{background:transparent;color:var(--muted);border:1.5px solid var(--border);padding:12px 18px;border-radius:100px;}.btn-g:hover{background:var(--white);border-color:#B5AFA8;color:var(--n);}
+.btn-wa{background:#25D366;color:#fff;border-radius:100px;}
+.btn:disabled{background:#D1D5DB;color:#9CA3AF;cursor:not-allowed;transform:none;box-shadow:none;}
+.back-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:400;color:var(--muted);cursor:pointer;background:none;border:none;padding:0;margin-bottom:28px;}
+.back-btn:hover{color:var(--n);}
+
+/* Plan accordion */
+.acc-card{background:var(--white);border-radius:16px;border:1px solid var(--border);margin-bottom:8px;overflow:hidden;transition:box-shadow .2s;}
+.acc-card:hover{box-shadow:0 2px 14px rgba(0,34,68,.07);}
+.acc-head{display:flex;align-items:center;justify-content:space-between;padding:16px 19px;cursor:pointer;user-select:none;}
+.acc-arr{font-size:14px;color:var(--muted);transition:transform .25s;flex-shrink:0;}
+.acc-card.open .acc-arr{transform:rotate(180deg);}
+.acc-body{padding:0 19px 18px;border-top:1px solid var(--border);display:none;}
+.acc-card.open .acc-body{display:block;}
+.plan-num{width:26px;height:26px;border-radius:10px;background:var(--n);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.summary-strip{background:var(--n);border-radius:8px;padding:18px 22px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+
+/* Tables */
+.price-table,.track-table{width:100%;border-collapse:collapse;}
+.price-table th,.track-table th{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;padding:8px 10px;border-bottom:1.5px solid var(--border);text-align:left;}
+.price-table td,.track-table td{font-size:12px;padding:10px;border-bottom:1px solid rgba(0,34,68,.05);vertical-align:middle;}
+.price-table tr:last-child td,.track-table tr:last-child td{border-bottom:none;}
+.week-pill{background:#EBF0F8;color:var(--n);font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;white-space:nowrap;}
+.week-pill.flag{background:#fdeaea;color:var(--r);}
+.owner-sga{background:#e8f5e9;color:var(--g);font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;white-space:nowrap;}
+.owner-both{background:#fff3e0;color:#e65100;font-size:9px;font-weight:700;padding:3px 9px;border-radius:4px;white-space:nowrap;}
+
+/* IR */
+.ir-tab-row{display:flex;border-bottom:2px solid var(--border);margin-bottom:14px;overflow-x:auto;}
+.ir-tab{padding:8px 14px;font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;display:flex;align-items:center;gap:5px;transition:all .15s;}
+.ir-tab.active{color:var(--n);border-bottom-color:var(--n);}
+.ir-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--border);margin-bottom:6px;background:var(--white);cursor:pointer;transition:all .15s;}
+.ir-item:hover{border-color:rgba(0,34,68,.2);}
+.ir-check{width:18px;height:18px;border-radius:50%;border:1.5px solid #ccc;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.ir-check i{font-size:9px;color:transparent;}
+.ir-status{font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;background:var(--bg);color:var(--muted);flex-shrink:0;}
+
+/* Modal */
+.modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center;}
+.modal-wrap.show{display:flex;}
+.modal{background:var(--white);border-radius:8px;padding:32px;width:100%;max-width:500px;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.18);animation:fadeUp .25s ease;}
+.modal-close{position:absolute;top:16px;right:16px;width:28px;height:28px;border-radius:50%;background:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);}
+.modal-close:hover{background:#e0e0dc;}
+.quote-ref-box{background:var(--n);border-radius:14px;padding:18px 22px;margin:16px 0;text-align:center;}
+.quote-ref-num{font-family:var(--font);font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;}
+.quote-ref-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px;}
+.quote-link-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:11px;color:var(--n);word-break:break-all;margin-bottom:12px;font-family:monospace;}
+
+/* Success */
+.success-wrap{text-align:center;max-width:480px;margin:0 auto;}
+.success-ico{width:64px;height:64px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
+.success-ico i{color:#fff;font-size:30px;}
+.ns-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);}
+.ns-row:last-child{border-bottom:none;}
+.ns-num{width:24px;height:24px;border-radius:50%;background:var(--n);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px;}
+.ns-name{font-size:13px;font-weight:600;color:var(--n);}
+.ns-sub{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5;}
+.disclaimer{background:#fffbf0;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:9px 13px;font-size:11px;color:#7a5c00;line-height:1.6;margin-top:10px;}
+
+/* ══════════════════════════════════
+   ONBOARDING SHELL - matched to Base44 preview
+══════════════════════════════════ */
+
+/* Shell grid */
+.ob-shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
+
+/* ── Sidebar ── */
+.ob-left{
+  background:var(--n);
+  display:flex;flex-direction:column;
+  padding:32px 28px 28px;
+  position:sticky;top:0;height:100vh;overflow:hidden;
+  border-right:none;
+}
+.ob-logo{display:flex;align-items:center;gap:11px;margin-bottom:40px;}
+.ob-logo-m{width:36px;height:36px;background:var(--r);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ob-logo-m i{color:#fff;font-size:16px;}
+.ob-logo-text .ob-brand{color:#fff;font-size:14px;font-weight:600;line-height:1.2;display:block;letter-spacing:-.2px;}
+.ob-logo-text .ob-brand-s{color:rgba(255,255,255,.3);font-size:10px;display:block;margin-top:2px;letter-spacing:.06em;text-transform:uppercase;}
+
+/* Page items */
+.ob-pages{display:flex;flex-direction:column;flex:1;}
+.ob-pg-item{display:flex;align-items:flex-start;gap:14px;cursor:default;}
+.ob-pg-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.ob-pg-circ{
+  width:30px;height:30px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;color:rgba(255,255,255,.2);
+  transition:all .25s;flex-shrink:0;
+}
+.ob-pg-circ.done{background:var(--g);border-color:var(--g);color:#fff;}
+.ob-pg-circ.active{background:var(--r);border-color:var(--r);color:#fff;}
+.ob-pg-conn{width:1px;height:24px;background:rgba(255,255,255,.06);margin:3px 0;}
+.ob-pg-text{padding-top:5px;padding-bottom:10px;}
+.ob-pg-num{font-size:9px;font-weight:500;color:rgba(255,255,255,.18);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px;}
+.ob-pg-name{font-size:12px;font-weight:600;color:rgba(255,255,255,.2);line-height:1.3;transition:color .25s;letter-spacing:-.1px;}
+.ob-pg-item.active .ob-pg-name{color:#fff;}
+.ob-pg-item.active .ob-pg-num{color:rgba(255,255,255,.45);}
+.ob-pg-item.done .ob-pg-name{color:rgba(255,255,255,.42);}
+.ob-pg-item.done .ob-pg-num{color:rgba(255,255,255,.25);}
+.ob-bot{
+  font-size:10px;color:rgba(255,255,255,.18);
+  display:flex;align-items:center;gap:6px;
+  padding-top:16px;border-top:1px solid rgba(255,255,255,.06);
+  letter-spacing:.02em;
+}
+
+/* ── Topbar ── */
+.ob-main{display:flex;flex-direction:column;background:#FAF8F5;min-height:100vh;}
+.ob-topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(250,248,245,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 64px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;position:relative;
+}
+.ob-topbar-left{display:flex;align-items:center;gap:14px;}
+.ob-page-eyebrow{
+  font-size:10px;font-weight:500;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;
+  background:transparent;
+  padding:3px 0;border-radius:0;
+}
+.ob-page-sep{width:1px;height:14px;background:#E2E4E9;}
+.ob-page-title{font-size:13px;font-weight:600;color:var(--n);}
+.ob-topbar-right{display:flex;align-items:center;gap:10px;}
+.ob-svc-count{
+  font-size:11px;font-weight:500;color:var(--n);
+  background:#F5F5F3;border:1px solid #E2E4E9;
+  border-radius:100px;padding:4px 14px;
+  display:flex;align-items:center;gap:7px;
+}
+.ob-svc-count-num{
+  background:var(--n);color:#fff;
+  font-size:9px;font-weight:700;
+  padding:1px 6px;border-radius:100px;
+}
+.ob-prog-line{position:absolute;bottom:0;left:0;right:0;height:2px;background:#EAEDF2;}
+.ob-prog-fill{height:100%;background:var(--r);transition:width .5s cubic-bezier(.4,0,.2,1);}
+
+/* ── Content ── */
+.ob-content{flex:1;padding:52px 64px 120px;}
+.ob-form{width:100%;max-width:660px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Footer bar ── */
+.ob-footer{
+  position:fixed;bottom:0;left:260px;right:0;
+  background:rgba(250,248,245,.98);
+  box-shadow:0 -1px 0 var(--border);
+  backdrop-filter:blur(16px);
+  border-top:1px solid var(--border);
+  padding:14px 52px;
+  display:flex;align-items:center;justify-content:space-between;
+  z-index:38;gap:16px;
+}
+.ob-footer-chips{display:flex;align-items:center;gap:5px;flex-wrap:wrap;flex:1;min-width:0;}
+.ob-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:10px;font-weight:500;color:var(--n);
+  background:#F0EDE8;border:1px solid var(--border);
+  padding:5px 12px;border-radius:100px;white-space:nowrap;
+}
+.ob-chip i{font-size:10px;color:var(--muted);}
+.ob-chip-empty{font-size:12px;color:var(--muted);}
+.ob-footer-right{display:flex;align-items:center;gap:18px;flex-shrink:0;}
+.ob-price{text-align:right;}
+.ob-price-lbl{font-size:9px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;}
+.ob-price-val{font-family:var(--display);font-size:24px;font-weight:400;color:var(--n);line-height:1;letter-spacing:-.3px;}
+.ob-price-sub{font-size:9px;color:var(--muted);margin-top:2px;}
+
+/* ── Question typography ── */
+.q-eye{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+.q-eye-line{width:16px;height:1px;background:var(--muted);border-radius:1px;}
+.q-eye-t{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:1.4px;text-transform:uppercase;}
+.q-title{font-family:var(--display);font-size:40px;font-weight:400;color:var(--n);line-height:1.08;margin-bottom:10px;letter-spacing:-.3px;}
+.q-sub{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:40px;font-weight:400;}
+
+/* ── Field groups ── */
+.field-group{margin-top:24px;}
+.field-group:first-child{margin-top:0;}
+.field-label{
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:10px;
+}
+.field-num{
+  font-size:10px;font-weight:700;color:#fff;
+  background:var(--n);padding:2px 7px;border-radius:4px;
+  letter-spacing:.3px;
+}
+.field-label-text{
+  font-size:11px;font-weight:600;color:var(--n);
+  text-transform:uppercase;letter-spacing:.7px;
+}
+.field-note{
+  font-size:11px;color:var(--muted);
+  background:#fff;border:1px solid var(--border);
+  border-radius:12px;padding:9px 13px;
+  line-height:1.55;margin-top:8px;
+  display:flex;align-items:flex-start;gap:7px;
+}
+.field-note i{font-size:12px;flex-shrink:0;margin-top:1px;color:var(--muted);}
+
+/* ── Selection cards ── */
+.sel-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.sel-list{display:flex;flex-direction:column;gap:6px;}
+.sel-card{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;border-radius:8px;
+  border:1.5px solid var(--border);
+  background:#fff;cursor:pointer;
+  transition:border-color .15s,box-shadow .15s;
+  user-select:none;
+}
+.sel-card:hover{border-color:#C0C8D8;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.sel-card.on{border-color:var(--n);background:#fff;}
+.sel-ico{
+  width:34px;height:34px;border-radius:10px;
+  background:var(--bg);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;transition:all .15s;
+}
+.sel-ico i{font-size:15px;color:#4B5563;}
+.sel-card.on .sel-ico{background:var(--n);}
+.sel-card.on .sel-ico i{color:#fff;}
+.sel-card-body{flex:1;min-width:0;}
+.sel-name{font-size:13px;font-weight:600;color:var(--n);}
+.sel-desc{font-size:11px;color:var(--muted);margin-top:2px;}
+.sel-dot{
+  width:18px;height:18px;border-radius:50%;
+  border:1.5px solid #D1D5DB;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.sel-dot i{font-size:8px;color:transparent;}
+.sel-card.on .sel-dot{background:var(--n);border-color:var(--n);}
+.sel-card.on .sel-dot i{color:#fff;}
+
+/* ── Pills ── */
+.pill-wrap{display:flex;flex-wrap:wrap;gap:6px;}
+.sel-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:8px 14px;border-radius:100px;
+  border:1.5px solid var(--border);background:#fff;
+  cursor:pointer;font-size:12px;font-weight:500;color:#374151;
+  transition:all .15s;user-select:none;
+}
+.sel-pill i{font-size:12px;color:#9CA3AF;}
+.sel-pill:hover{border-color:#C0C8D8;}
+.sel-pill.on{background:var(--n);border-color:var(--n);color:#fff;}
+.sel-pill.on i{color:rgba(255,255,255,.6);}
+
+/* ── Branch question ── */
+.branch-box{
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:8px;padding:18px 20px;margin-top:8px;
+}
+.branch-q{font-size:13px;font-weight:600;color:var(--n);margin-bottom:3px;}
+.branch-s{font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:12px;}
+.branch-btns{display:flex;gap:8px;}
+.branch-btn{
+  flex:1;padding:10px 14px;border-radius:100px;
+  font-size:12px;font-weight:600;cursor:pointer;
+  border:1.5px solid var(--border);background:#fff;color:#374151;
+  font-family:var(--font);transition:all .15s;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+}
+.branch-btn:hover{border-color:var(--n);}
+.branch-btn.yes{background:var(--n);border-color:var(--n);color:#fff;}
+.branch-btn.no{background:var(--r);border-color:var(--r);color:#fff;}
+.branch-result{
+  margin-top:8px;padding:8px 12px;border-radius:10px;
+  font-size:11px;line-height:1.5;display:flex;align-items:center;gap:6px;
+}
+.branch-result.yes-r{background:#E8F5E9;color:#1A6B3C;}
+.branch-result.no-r{background:#FEF2F2;color:var(--r);}
+
+/* ── Service section headers ── */
+.svc-sec-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.svc-sec-label{font-size:11px;font-weight:700;color:var(--n);text-transform:uppercase;letter-spacing:.6px;}
+.svc-sec-tag{font-size:10px;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:2px 8px;border-radius:100px;}
+.svc-sec-line{flex:1;height:1px;background:var(--border);min-width:16px;}
+
+/* ── Info/warn bands ── */
+.info-band{background:#EBF0F8;border-left:3px solid var(--n);border-radius:0 6px 6px 0;padding:9px 13px;font-size:12px;color:var(--n);line-height:1.6;margin:8px 0;}
+.warn-band{background:#FFF8E7;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:9px 13px;font-size:12px;color:#7A5C00;line-height:1.6;margin:8px 0;}
+
+/* ── Input ── */
+.t-inp{
+  width:100%;padding:11px 14px;border:1.5px solid var(--border);
+  border-radius:12px;font-size:14px;color:var(--ink);
+  background:#fff;outline:none;font-family:var(--font);
+  transition:border .2s,box-shadow .2s;margin-top:6px;display:block;
+}
+.t-inp:focus{border-color:var(--n);box-shadow:0 0 0 3px rgba(0,34,68,.06);}
+.t-inp::placeholder{color:#C0C8D8;}
+
+/* ── Buttons ── */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:11px 20px;border-radius:100px;
+  font-size:13px;font-weight:600;cursor:pointer;border:none;
+  font-family:var(--font);transition:all .15s;
+}
+.btn-n{background:var(--n);color:#fff;}.btn-n:hover{background:#003366;}
+.btn-r{background:var(--r);color:#fff;}.btn-r:hover{background:var(--r2);}
+.btn-g{background:transparent;color:var(--muted);border:1.5px solid var(--border);padding:11px 14px;}.btn-g:hover{background:var(--bg);}
+.btn-wa{background:#25D366;color:#fff;}
+.btn:disabled{background:#D1D5DB;color:#9CA3AF;cursor:not-allowed;}
+.back-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:500;color:var(--muted);
+  cursor:pointer;background:none;border:none;padding:0;margin-bottom:20px;
+}
+.back-btn:hover{color:var(--n);}
+
+/* ── Tracker / doc items ── */
+.ir-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:12px;
+  border:1px solid var(--border);margin-bottom:5px;
+  background:#fff;cursor:pointer;transition:border-color .15s;
+}
+.ir-item:hover{border-color:var(--n);}
+.ir-check{
+  width:19px;height:19px;border-radius:6px;
+  border:1.5px solid #D1D5DB;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.ir-check i{font-size:8px;color:transparent;}
+.ir-status{
+  font-size:9px;font-weight:500;padding:3px 8px;
+  border-radius:100px;background:#F0EDE8;color:var(--muted);flex-shrink:0;
+}
+
+/* ── Owner badges ── */
+.owner-sga{background:#E8F5E9;color:#1A6B3C;font-size:9px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;}
+.owner-both{background:#FFF8E7;color:#7A5C00;font-size:9px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;}
+.owner-client{background:#EBF0F8;color:var(--n);font-size:9px;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap;}
+
+/* ── Page 5 success items ── */
+.ns-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);}
+.ns-row:last-child{border-bottom:none;}
+.ns-num{width:24px;height:24px;border-radius:50%;background:var(--n);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0;margin-top:1px;}
+.ns-name{font-size:13px;font-weight:600;color:var(--n);}
+.ns-sub{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.4;}
+.disclaimer{background:#FBF6E8;border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:10px 14px;font-size:11px;color:#7a5c00;line-height:1.65;}
+
+/* ── Modal ── */
+.modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;display:none;align-items:center;justify-content:center;}
+.modal-wrap.show{display:flex;}
+.modal{background:var(--bg);border-radius:20px;padding:32px;width:100%;max-width:480px;position:relative;box-shadow:0 28px 70px rgba(0,0,0,.14);animation:fadeUp .2s ease;}
+.modal-close{position:absolute;top:14px;right:14px;width:26px;height:26px;border-radius:50%;background:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted);}
+.modal-close:hover{background:var(--border);}
+.quote-ref-box{background:var(--n);border-radius:14px;padding:16px 20px;margin:14px 0;text-align:center;}
+.quote-ref-num{font-size:20px;font-weight:700;color:#fff;letter-spacing:2px;}
+.quote-ref-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px;}
+.quote-link-box{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:9px 12px;font-size:11px;color:var(--n);word-break:break-all;margin-bottom:10px;font-family:monospace;}
+
+/* ── PAGE 1 SECTION HEADERS (no numbers) ── */
+.p1-section {
+  margin-top: 44px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.p1-section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.p1-sec-hdr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.p1-sec-accent {
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.p1-sec-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--n);
+  letter-spacing: -.1px;
+}
+.p1-sec-tag {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-left: auto;
+  letter-spacing: .03em;
+}
+/* accent colours per section */
+.accent-blue  { background: #3B82F6; }
+.accent-violet{ background: #8B5CF6; }
+.accent-amber { background: #F59E0B; }
+.accent-teal  { background: #14B8A6; }
+.accent-red   { background: var(--r); }
+.accent-green { background: var(--g); }
+.accent-slate { background: #64748B; }
+
+.tag-blue   { background: #EFF6FF; color: #1D4ED8; }
+.tag-violet { background: #F5F3FF; color: #6D28D9; }
+.tag-amber  { background: #FFFBEB; color: #92400E; }
+.tag-teal   { background: #F0FDFA; color: #0F766E; }
+.tag-red    { background: #FEF2F2; color: #991B1B; }
+.tag-green  { background: #F0FDF4; color: #166534; }
+.tag-slate  { background: #F8FAFC; color: #475569; border: 1px solid #E2E8F0; }
+
+/* ── PAGE 1 VALIDATION ── */
+.ob-contact-bar{display:none;align-items:center;gap:6px;}
+.contact-ico{width:30px;height:30px;border-radius:50%;border:1px solid var(--border);background:var(--white);display:flex;align-items:center;justify-content:center;color:var(--n);text-decoration:none;font-size:13px;transition:all .15s;}
+.contact-ico:hover{border-color:var(--n);background:var(--bg);transform:translateY(-1px);}
+.contact-ico.wa{color:#25D366;}
+
+.p1-error-banner{background:#FEF2F2;border:1.5px solid #FCA5A5;border-radius:12px;padding:14px 18px;margin-top:20px;display:flex;align-items:flex-start;gap:10px;animation:fadeUp .25s ease;}
+.p1-error-banner i{color:var(--r);font-size:16px;margin-top:1px;flex-shrink:0;}
+.p1-error-title{font-size:12.5px;font-weight:700;color:#991B1B;margin-bottom:4px;}
+.p1-error-list{font-size:11.5px;color:#B91C1C;line-height:1.8;}
+.p1-section.p1-err{outline:2px solid var(--r);outline-offset:8px;border-radius:12px;}
+.p1-section.p1-err .p1-sec-label{color:var(--r);}
+
+/* ── Hover definitions (service tooltips) ── */
+.has-tip{position:relative;}
+.has-tip::after{
+  content:attr(data-tip);
+  position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%) translateY(4px);
+  width:220px;background:var(--n);color:#fff;font-size:11px;font-weight:400;line-height:1.5;
+  padding:10px 12px;border-radius:10px;text-align:left;letter-spacing:0;text-transform:none;
+  opacity:0;visibility:hidden;transition:opacity .15s,transform .15s;pointer-events:none;z-index:20;
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+.has-tip::before{
+  content:'';position:absolute;left:50%;bottom:calc(100% + 3px);transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:var(--n);
+  opacity:0;visibility:hidden;transition:opacity .15s;pointer-events:none;z-index:20;
+}
+.has-tip:hover::after,.has-tip:hover::before{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+
+/* Wide variant - for full-width tracker/stage rows (left-aligned, opens downward) */
+.has-tip-wide::after{left:0;top:calc(100% + 8px);bottom:auto;transform:translateY(4px);width:min(380px,78vw);}
+.has-tip-wide::before{left:22px;top:100%;bottom:auto;transform:translateY(4px) rotate(180deg);}
+.has-tip-wide:hover::after{transform:translateY(0);}
+.has-tip-wide:hover::before{transform:translateY(0) rotate(180deg);}
+</style>
+</head>
+<body>
+
+<!-- ══════════ LANDING ══════════ -->
+<div class="pg on" id="pg-landing">
+<nav>
+  <div class="nav-logo">
+    <div class="nav-mark"><i class="ti ti-building-skyscraper"></i></div>
+    <div><div class="nav-brand">Singapore Accountants</div><div class="nav-brand-s">SGConnect · Client Portal</div></div>
+  </div>
+  <button class="nav-cta" onclick="startOB()">Build my plan →</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-pill"><span></span> ACRA &amp; IRAS compliance specialists</div>
+    <h1 class="hero-h">Your finances,<br><em>handled.</em></h1>
+    <p class="hero-sub">From company incorporation to strategic finance - SGA is the financial pillar your business grows from. Tell us about your business, and we'll build your proposal.</p>
+    <div class="hero-btns">
+      <button class="btn-hero-p" onclick="startOB()"><i class="ti ti-sparkles"></i> Build my plan</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-n">200+</span><div class="hero-stat-l">Companies served</div></div>
+      <div class="hero-stat"><span class="hero-stat-n">8</span><div class="hero-stat-l">Service areas</div></div>
+      <div class="hero-stat"><span class="hero-stat-n">100%</span><div class="hero-stat-l">On-time delivery</div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end landing -->
+
+<!-- ══════════════════════════════
+     ONBOARDING SHELL
+══════════════════════════════ -->
+<div class="pg" id="pg-ob">
+  <div class="ob-shell">
+
+    <!-- SIDEBAR -->
+    <div class="ob-left">
+      <div class="ob-logo">
+        <div class="ob-logo-m"><i class="ti ti-building-skyscraper"></i></div>
+        <div><div class="ob-brand">SG Accountants</div><div class="ob-brand-s">SGConnect</div></div>
+      </div>
+      <div class="ob-pages" id="ob-pages">
+        <div class="ob-pg-item active" data-p="1">
+          <div class="ob-pg-left"><div class="ob-pg-circ" id="pc1">1</div><div class="ob-pg-conn"></div></div>
+          <div class="ob-pg-text"><div class="ob-pg-num">Page 1</div><div class="ob-pg-name">Client Background &amp; Services</div></div>
+        </div>
+        <div class="ob-pg-item" data-p="2">
+          <div class="ob-pg-left"><div class="ob-pg-circ" id="pc2">2</div><div class="ob-pg-conn"></div></div>
+          <div class="ob-pg-text"><div class="ob-pg-num">Page 2</div><div class="ob-pg-name">Delivery Roadmap</div></div>
+        </div>
+        <div class="ob-pg-item" data-p="3">
+          <div class="ob-pg-left"><div class="ob-pg-circ" id="pc3">3</div><div class="ob-pg-conn"></div></div>
+          <div class="ob-pg-text"><div class="ob-pg-num">Page 3</div><div class="ob-pg-name">Information Required</div></div>
+        </div>
+        <div class="ob-pg-item" data-p="4">
+          <div class="ob-pg-left"><div class="ob-pg-circ" id="pc4">4</div><div class="ob-pg-conn"></div></div>
+          <div class="ob-pg-text"><div class="ob-pg-num">Page 4</div><div class="ob-pg-name">Fee Estimate</div></div>
+        </div>
+        <div class="ob-pg-item" data-p="5">
+          <div class="ob-pg-left"><div class="ob-pg-circ" id="pc5">5</div></div>
+          <div class="ob-pg-text"><div class="ob-pg-num">Page 5</div><div class="ob-pg-name">Confirm &amp; Submit</div></div>
+        </div>
+      </div>
+      <div class="ob-bot"><i class="ti ti-lock" style="font-size:12px;"></i> 256-bit encrypted · SG data residency</div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="ob-main">
+
+      <!-- Topbar -->
+      <div class="ob-topbar">
+        <div class="ob-topbar-left">
+          <span class="ob-page-eyebrow" id="tb-eyebrow">Page 1</span>
+          <div class="ob-page-sep"></div>
+          <span class="ob-page-title" id="tb-title">Client Background &amp; Services</span>
+        </div>
+        <div class="ob-topbar-right">
+          <div class="ob-svc-count" id="tb-count" style="display:none;">
+            <span class="ob-svc-count-num" id="tb-count-num">0</span>
+            services selected
+          </div>
+          <div class="ob-contact-bar" id="ob-contact-bar" title="Contact SGA">
+            <a class="contact-ico wa" href="https://wa.me/6500000000" target="_blank" title="Chat on WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+            <a class="contact-ico" href="mailto:hello@sgaccountants.sg" title="Email SGA"><i class="ti ti-mail"></i></a>
+            <a class="contact-ico" href="https://calendly.com/sgaccountants/consult" target="_blank" title="Schedule a call"><i class="ti ti-calendar-event"></i></a>
+          </div>
+          <button class="btn btn-g" onclick="showLanding()" style="padding:7px 16px;font-size:11px;"><i class="ti ti-home"></i> Home</button>
+        </div>
+        <div class="ob-prog-line"><div class="ob-prog-fill" id="ob-prog" style="width:5%;"></div></div>
+      </div>
+
+      <!-- Scroll content -->
+      <div class="ob-content">
+        <div class="ob-form" id="qwrap"></div>
+      </div>
+
+      <!-- Floating footer -->
+      <div class="ob-footer">
+        <div class="ob-footer-chips" id="footer-chips">
+          <span class="ob-chip-empty">No services selected yet</span>
+        </div>
+        <div class="ob-footer-right">
+          <div class="ob-price" id="footer-price" style="display:none;">
+            <div class="ob-price-lbl">ESTIMATED</div>
+            <div class="ob-price-val" id="footer-price-val">TBC</div>
+            <div class="ob-price-sub" id="footer-price-sub">USD · excl. GST</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ob-main -->
+  </div>
+</div>
+
+<!-- QUOTE MODAL -->
+<div class="modal-wrap" id="quote-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()"><i class="ti ti-x"></i></button>
+    <div style="font-size:18px;font-weight:700;color:var(--n);margin-bottom:4px;">Your quotation is ready</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px;">Share this reference or link with SGA to proceed to engagement.</div>
+    <div class="quote-ref-box">
+      <div class="quote-ref-num" id="modal-ref">SGA-2026-0001</div>
+      <div class="quote-ref-lbl">Unique quotation reference</div>
+    </div>
+    <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;">Shareable link</div>
+    <div class="quote-link-box" id="modal-link">https://sgconnect.sg/quote/SGA-2026-0001</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <button class="btn btn-n" style="flex:1;justify-content:center;" onclick="copyLink()"><i class="ti ti-copy"></i> Copy link</button>
+      <button class="btn btn-wa" style="flex:1;justify-content:center;" onclick="shareWA()"><i class="ti ti-brand-whatsapp"></i> Share</button>
+    </div>
+    <div class="info-band" style="margin:0;font-size:11px;"><i class="ti ti-info-circle" style="font-size:12px;margin-right:4px;"></i>This quotation converts into a Letter of Engagement (NDA included) once SGA confirms scope on Page 5.</div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════
+   STATE - all client inputs live here
+══════════════════════════════════════════════════════ */
+const S = {
+  // Company profile
+  companyStatus: '',      // 'new' | 'existing'
+  founderType: '',        // 'local' | 'foreign'
+  shareholderType: '',    // 'individual' | 'corporate'
+  businessSize: '',       // 'new_co' | 'startup' | 'sme'
+  businessActivity: [],   // array of activity codes
+  gstStatus: '',          // 'registered' | 'not' | 'soon'
+  gstNumber: '',
+  highRiskJurisdiction: '', // 'yes' | 'no'
+  multiJurisdiction: '',    // 'yes' | 'no'
+
+  // Services - Essential
+  incorporation: false,     // auto-locks bank_account too
+  residentDirector: false,  // triggers deed of indemnity
+  bankAccount: false,       // auto-set from companyStatus
+  annualCompliance: false,
+  employmentPass: false,
+  numApplicants: 1,
+
+  // Services - Optional
+  riskAdvisory: false,
+  auditSupport: false,
+  esop: false,
+
+  // Services - Custom
+  customServices: [],       // array of custom service names
+
+  // People
+  numDirectors: 1,
+  numShareholders: 1,
+
+  // Regulatory
+  rl_licenses: '',    // yes/no/unsure
+  rl_multiJur: '',    // sg_only/multiple
+  rl_pending: '',     // yes/no
+
+  // Quotation
+  quotationRef: '',
+  manualFeeOverride: null,   // number | null - Page 4 manual override
+  manualFeeNote: '',
+  _showFeeOverride: false,
+
+  // Page 3 - document checklist state
+  docsReady: {},             // { [docId]: true }
+  _docFilterNature: 'all',   // all | Information | Document | Decision | Output
+  _docFilterStatus: 'all',   // all | pending | ready
+  _docGroupOpen: {},         // { [groupIndex]: true|false }
+
+  // Internal - page 1 validation
+  _attemptedSubmit: false,
+};
+
+/* ── BUSINESS LOGIC RULES (from backend documents) ─── */
+
+// Rule 3: Bank Account auto-lock
+function applyBankAccountRule() {
+  if (S.companyStatus === 'new') {
+    S.bankAccount = true;
+  } else if (S.companyStatus === 'existing') {
+    S.bankAccount = false;
+  }
+}
+
+// Rule 4: Resident Director triggers Deed of Indemnity (shown in doc checklist)
+// Rule 8/9: Foreigner shows passport, SG resident shows NRIC
+// Rule 10/11: Corporate shareholder adds docs 24,25,26
+// Rule 12: Repeating docs = numDirectors + numShareholders
+// Rule 13: High-risk jurisdiction triggers EDD form
+// All applied in doc checklist rendering
+
+function getRequiredDocs() {
+  const docs = [];
+  const n = S.numDirectors + S.numShareholders;
+
+  // ── Company Information ──
+  docs.push({id:1, name:'Company Name', nature:'Information', who:'Client', copies:1, notes:'Required for all services'});
+  docs.push({id:2, name:'Registered Office Address', nature:'Output', who:'SGA ✦', copies:0, notes:'SGA provides - do not ask client', sga:true});
+  docs.push({id:3, name:'Detailed Business Description', nature:'Information', who:'Client', copies:1, notes:'Used to determine ACRA codes and bank KYC'});
+  docs.push({id:4, name:'Primary Business Activity (ACRA)', nature:'Output', who:'SGA ✦', copies:0, notes:'SGA determines from business description', sga:true});
+  docs.push({id:5, name:'Secondary Business Activity (ACRA)', nature:'Output', who:'SGA ✦', copies:0, notes:'SGA determines from business description', sga:true});
+  docs.push({id:6, name:'Industry', nature:'Information', who:'Client', copies:1});
+  docs.push({id:7, name:'Company Website', nature:'Information', who:'Client', copies:1});
+  docs.push({id:8, name:'Countries Where Clients Are Located', nature:'Information', who:'Client', copies:1});
+  if (S.companyStatus === 'new') {
+    docs.push({id:9, name:'Paid-Up Capital (min SGD 1)', nature:'Decision', who:'Client', copies:1, notes:'New Company only - can be increased post-incorporation'});
+    docs.push({id:10, name:'Number of Shares to be Issued', nature:'Decision', who:'Client', copies:1, notes:'New Company only - noupper limit'});
+  }
+  docs.push({id:11, name:'Financial Year End (FYE)', nature:'Decision', who:'Client', copies:1, notes:'SGA recommends within 12 months to access SGD 125K start-up tax exemption'});
+  if (S.companyStatus === 'existing') {
+    docs.push({id:12, name:'Existing BizFile / Certificate of Incorporation', nature:'Document', who:'Client', copies:1, notes:'Existing Company only'});
+  }
+
+  // ── Director & Shareholder (repeats per person) ──
+  docs.push({id:13, name:'Full Name', nature:'Information', who:'Client', copies:n, notes:`Repeats per director + shareholder (×${n})`});
+  docs.push({id:14, name:'Email Address', nature:'Information', who:'Client', copies:n, notes:`Repeats per director + shareholder (×${n})`});
+  docs.push({id:15, name:'Mobile Number', nature:'Information', who:'Client', copies:n, notes:`Repeats per director + shareholder (×${n})`});
+  // Rule 8: Foreigner = Passport, Rule 9: SG Resident = NRIC
+  if (S.founderType === 'foreign') {
+    docs.push({id:16, name:'Copy of Valid Passport', nature:'Document', who:'Client', copies:n, notes:`Foreigners only (×${n})`});
+  } else {
+    docs.push({id:17, name:'Copy of NRIC / Dependant Pass', nature:'Document', who:'Client', copies:n, notes:`SG Residents only (×${n})`});
+  }
+  docs.push({id:18, name:'Proof of Residential Address (≤ 3 months)', nature:'Document', who:'Client', copies:n, notes:`Utility bill or bank statement (×${n})`});
+  docs.push({id:19, name:'CV / LinkedIn Profile', nature:'Document', who:'Client', copies:n, notes:`Repeats per person (×${n})`});
+  docs.push({id:20, name:'Shareholding Percentage', nature:'Decision', who:'Client', copies:S.numShareholders, notes:`Per shareholder (×${S.numShareholders})`});
+  docs.push({id:21, name:'Number of Shares (per person)', nature:'Decision', who:'Client', copies:S.numShareholders, notes:`Per shareholder (×${S.numShareholders})`});
+  if (S.bankAccount) {
+    docs.push({id:22, name:'Proof of Source of Wealth', nature:'Document', who:'Client', copies:n, notes:`Bank Account Opening only (×${n})`});
+  }
+  docs.push({id:23, name:'Personal Verification (Onfido Link)', nature:'Output', who:'SGA ✦', copies:n, notes:'SGA sends link AFTER KYC docs received - NOT a client upload', sga:true});
+
+  // Rule 10: Corporate shareholder docs
+  if (S.shareholderType === 'corporate') {
+    docs.push({id:24, name:'Certificate of Incorporation (corporate shareholder entity)', nature:'Document', who:'Client', copies:S.numShareholders, notes:`Corporate shareholders only (×${S.numShareholders})`});
+    docs.push({id:25, name:'Corporate Structure Chart / Ownership Chart', nature:'Document', who:'Client', copies:S.numShareholders, notes:`Corporate shareholders only (×${S.numShareholders})`});
+    docs.push({id:26, name:'Corporate Director / Authorised Signatory Details', nature:'Document', who:'Client', copies:S.numShareholders, notes:`Corporate shareholders only (×${S.numShareholders})`});
+  }
+  // Rule 6: Risk Advisory adds doc 25 if not already there
+  if (S.riskAdvisory && S.shareholderType !== 'corporate') {
+    docs.push({id:25, name:'Corporate Structure Chart / Ownership Chart', nature:'Document', who:'Client', copies:1, notes:'Required for Risk Advisory engagement'});
+  }
+
+  // ── Incorporation Documents (SGA drafts, client signs) ──
+  if (S.incorporation || S.companyStatus === 'new') {
+    docs.push({id:27, name:'Customer Due Diligence (CDD) Form', nature:'Output', who:'Client signs', copies:1, notes:'SGA drafts, client signs', sga:true});
+    docs.push({id:28, name:'Consent to Act as Director Form', nature:'Output', who:'Client signs', copies:S.numDirectors, notes:`One per director (×${S.numDirectors})`, sga:true});
+    docs.push({id:29, name:'Constitution by Shares', nature:'Output', who:'Client signs', copies:1, notes:'SGA drafts', sga:true});
+    docs.push({id:31, name:'Agent Authorisation Letter', nature:'Output', who:'Client signs', copies:1, sga:true});
+    docs.push({id:32, name:'Notice of Controller', nature:'Output', who:'Client signs', copies:1, sga:true});
+  }
+  // Rule 13: High-risk jurisdiction
+  if (S.highRiskJurisdiction === 'yes') {
+    docs.push({id:30, name:'Enhanced Due Diligence (EDD) Form', nature:'Output', who:'Client signs', copies:1, notes:'High-Risk Jurisdiction only', sga:true});
+  }
+  // Rule 4: Resident director triggers Deed of Indemnity
+  if (S.residentDirector) {
+    docs.push({id:33, name:'Deed of Indemnity Letter (Nominee Director)', nature:'Output', who:'Client signs', copies:1, notes:'Required - Resident Director service selected', sga:true});
+  }
+
+  // ── Bank Account (New Company only) ──
+  if (S.bankAccount && S.companyStatus === 'new') {
+    docs.push({id:34, name:'Shareholder Declaration', nature:'Document', who:'Client', copies:1, notes:'New Company only'});
+    docs.push({id:35, name:'Proof of Business Activities (invoices / contracts)', nature:'Document', who:'Client', copies:1, notes:'Bank may request during KYC review'});
+    docs.push({id:36, name:'BizFile (post-incorporation)', nature:'Output', who:'SGA ✦', copies:1, notes:'SGA provides after ACRA filing', sga:true});
+  }
+
+  // ── Employment Pass ──
+  if (S.employmentPass) {
+    docs.push({id:37, name:'Employment History / Resume', nature:'Document', who:'Client', copies:S.numApplicants, notes:`Per applicant (×${S.numApplicants})`});
+    docs.push({id:38, name:'Educational Certificates', nature:'Document', who:'Client', copies:S.numApplicants, notes:`Per applicant (×${S.numApplicants})`});
+    docs.push({id:39, name:'Offer Letter / Employment Contract', nature:'Document', who:'Client', copies:S.numApplicants, notes:`Per applicant (×${S.numApplicants})`});
+    docs.push({id:40, name:'Company incorporation docs (for EP filing)', nature:'Output', who:'SGA ✦', copies:1, notes:'SGA provides from incorporation records', sga:true});
+  }
+
+  return docs;
+}
+
+/* ── PRICING ENGINE (from fee document) ── */
+function calcFees() {
+  const fees = { phase1: 0, phase1Items: [], ep: 0, optional: [], custom: [], total: 0 };
+
+  // Core service line items - each contributes its own fee independently
+  // of company status, so a selected service always shows up here.
+  const p1 = [];
+  const isIncorporating = S.incorporation || S.companyStatus === 'new';
+
+  if (isIncorporating) {
+    p1.push({label:'Company Incorporation & Bank Account Opening', amount:300, note:'ACRA filing + digital bank setup'});
+  }
+  if (S.annualCompliance) {
+    p1.push({label:'Annual Compliances (Tax & Statutory)', amount:1400, note:'ECI, Form C/CS, AGM, AR, statutory registers'});
+  }
+  if (isIncorporating || S.annualCompliance) {
+    p1.push({label:'Corporate Secretary (CS) Services', amount:500, note:'Mandatory under Companies Act'});
+    p1.push({label:'Registered Office Address', amount:300, note:'SGA registered office for ACRA'});
+  }
+  if (S.residentDirector) {
+    p1.unshift({label:'Singapore Resident Director', amount:500, note:'Nominee director provision'});
+  }
+  fees.phase1Items = p1;
+  fees.phase1 = p1.reduce((a,b) => a+b.amount, 0);
+
+  if (S.employmentPass) {
+    fees.ep = 2000 * S.numApplicants;
+  }
+
+  if (S.riskAdvisory) fees.optional.push({label:'Risk Advisory Essential', amount:'Separate engagement', note:'Separate letter & fee schedule'});
+  if (S.auditSupport)  fees.optional.push({label:'Audit Support', amount:'Separate engagement', note:'Separate letter & fee schedule'});
+  if (S.esop)          fees.optional.push({label:'ESOP Setup', amount:'Separate engagement', note:'Separate letter & fee schedule'});
+
+  S.customServices.filter(cs => cs !== 'None of the above').forEach(cs => {
+    fees.custom.push({label:cs, amount:'On assessment', note:'Confirmed after assessment'});
+  });
+
+  fees.total = fees.phase1 + fees.ep;
+  return fees;
+}
+
+/* ── MANUAL FEE OVERRIDE (Page 4) ── */
+function hasOverride() { return S.manualFeeOverride != null && !isNaN(S.manualFeeOverride); }
+function getDisplayTotal(fees) { fees = fees || calcFees(); return hasOverride() ? S.manualFeeOverride : fees.total; }
+function applyFeeOverride() {
+  const inp = document.getElementById('fee-override-input');
+  const note = document.getElementById('fee-override-note');
+  const val = inp ? parseFloat(inp.value) : NaN;
+  if (isNaN(val) || val < 0) { inp.style.borderColor = 'var(--r)'; return; }
+  S.manualFeeOverride = val;
+  S.manualFeeNote = note ? note.value.trim() : '';
+  S._showFeeOverride = true;
+  updateFooter(); renderPage4();
+}
+function clearFeeOverride() {
+  S.manualFeeOverride = null; S.manualFeeNote = ''; S._showFeeOverride = false;
+  updateFooter(); renderPage4();
+}
+
+/* ── DELIVERY TRACKER DATA (from tracker document) ── */
+function getTrackerRows() {
+  const rows = [];
+
+  if (S.incorporation || S.companyStatus === 'new') {
+    rows.push({svc:'Company Incorporation', section:true});
+    rows.push({ref:'1.1', area:'Company Structure Setup', body:'Internal', scope:'Discuss and finalise company type, shareholding structure, directors, and initial paid-up capital', deliverable:'Confirmed company structure', owner:'SGA + Client', flag:true});
+    rows.push({ref:'1.2', area:'Name Reservation', body:'ACRA', scope:'Conduct name availability check and submit name application with ACRA', deliverable:'Approved company name', owner:'SGA'});
+    rows.push({ref:'1.3', area:'KYC (Know Your Customer)', body:'ACRA / MAS', scope:'Collect and verify identification documents, residential addresses, and corporate documents for all shareholders and directors', deliverable:'Verified KYC documents for all shareholders and directors', owner:'Client → SGA'});
+    rows.push({ref:'1.4', area:'Incorporation Documents', body:'ACRA', scope:'Prepare constitution, business activity details (SSIC codes), and incorporation particulars', deliverable:'Incorporation document set', owner:'SGA'});
+    rows.push({ref:'1.5', area:'Incorporation Filing', body:'ACRA', scope:'File incorporation application with ACRA through BizFile+', deliverable:'UEN & Certificate of Incorporation', owner:'SGA'});
+    rows.push({ref:'1.6', area:'Appointment of Officers', body:'ACRA', scope:'Prepare and arrange appointment of director(s) and company secretary', deliverable:'Appointment resolutions', owner:'SGA'});
+    rows.push({ref:'1.7', area:'Registered Office', body:'ACRA', scope:"Register and update the company's local registered office address with ACRA", deliverable:'Registered office address confirmation', owner:'SGA'});
+    rows.push({ref:'1.8', area:'Share Issuance', body:'ACRA', scope:'Prepare share allotment documents and issue initial share certificates', deliverable:'Share certificates', owner:'SGA'});
+    rows.push({ref:'1.9', area:'Post-Incorporation Setup', body:'ACRA', scope:'Prepare basic statutory registers and initial corporate records', deliverable:'Statutory registers', owner:'SGA'});
+  }
+
+  if (S.residentDirector) {
+    rows.push({svc:'Singapore Resident Director', section:true});
+    rows.push({ref:'2.1', area:'Resident Director Appointment', body:'ACRA', scope:'Provision of a Singapore resident director to support governance framework and corporate oversight', deliverable:'Review and execution of ACRA-related resolutions requiring director approval', owner:'SGA'});
+    rows.push({ref:'2.2', area:'Corporate Governance Support', body:'ACRA / MAS', scope:'Oversight of corporate governance matters (management meetings and commercial negotiations excluded unless separately agreed)', deliverable:"Internal review of corporate matters relevant to the Resident Director's role", owner:'SGA'});
+  }
+
+  if (S.bankAccount) {
+    rows.push({svc:'Bank Account Opening', section:true});
+    rows.push({ref:'3.1', area:'Bank Selection', body:'MAS', scope:'Advise client on suitable digital bank options based on business needs', deliverable:'Selected digital bank', owner:'SGA'});
+    rows.push({ref:'3.2', area:'KYC Documentation', body:'MAS', scope:'Collect and submit required KYC documents for directors and shareholders', deliverable:'KYC documents submitted', owner:'Client → SGA'});
+    rows.push({ref:'3.3', area:'Online Application Submission', body:'MAS', scope:'Prepare and submit digital bank application through bank platform', deliverable:'Application successfully submitted', owner:'SGA'});
+    rows.push({ref:'3.4', area:'Bank Review & Follow-ups', body:'MAS', scope:'Liaise with the bank to address queries and provide additional information if required', deliverable:'Bank queries resolved', owner:'SGA'});
+    rows.push({ref:'3.5', area:'Account Approval', body:'MAS', scope:'Coordinate confirmation of account approval from the bank', deliverable:'Account approval confirmation', owner:'SGA'});
+  }
+
+  if (S.annualCompliance) {
+    rows.push({svc:'Annual Compliances', section:true});
+    rows.push({ref:'4.1', area:'Personal Tax Filing (IR8A)', body:'IRAS', scope:'Prepare and submit IR8A forms for employees, covering salaries, bonuses, and CPF contributions', deliverable:'Completed IR8A forms; filing submission acknowledgement; payroll reconciliation', owner:'SGA'});
+    rows.push({ref:'4.2', area:'Estimated Chargeable Income (ECI)', body:'IRAS', scope:'Prepare and submit ECI within 3 months after financial year-end to IRAS', deliverable:'ECI submission acknowledgement; supporting computation of estimated corporate tax', owner:'SGA'});
+    rows.push({ref:'4.3', area:'GST Compliance', body:'IRAS', scope:'Prepare and file GST returns, reconcile GST accounts, and ensure IRAS compliance', deliverable:'GST F5 return filings (monthly/quarterly); GST reconciliation reports', owner:'SGA'});
+    rows.push({ref:'4.4', area:'Corporate Tax Filing', body:'IRAS', scope:'Prepare and file corporate income tax returns (Form C or C-S), calculate tax liabilities', deliverable:'Filed corporate tax return; tax computation and schedules; payment of corporate tax liability', owner:'SGA'});
+    rows.push({ref:'4.5', area:'Withholding Tax (WHT) Compliance', body:'IRAS', scope:'Calculate and remit withholding taxes for payments to non-residents in accordance with IRAS requirements', deliverable:'WHT computation schedules; tax remittance receipts; IRAS submission confirmation', owner:'SGA'});
+    rows.push({ref:'4.6', area:'Annual General Meeting (AGM)', body:'ACRA', scope:'Convene AGM in compliance with Singapore Companies Act, prepare resolutions, and record shareholder approvals', deliverable:'AGM notices and minutes; signed resolutions; documentation for statutory records', owner:'SGA + Client'});
+    rows.push({ref:'4.7', area:'Annual Return (AR) Filing', body:'ACRA (BizFile+)', scope:'Prepare and file Annual Return via BizFile+, updating ACRA with company details', deliverable:'Filed Annual Return; confirmation of filing with ACRA; updated company particulars', owner:'SGA'});
+    rows.push({ref:'4.8', area:'Updating Statutory Registers', body:'ACRA', scope:'Maintain and update statutory registers including directors, shareholders, and share capital', deliverable:'Updated statutory registers; filed resolutions for changes; confirmation of ACRA updates', owner:'SGA'});
+  }
+
+  if (S.riskAdvisory) {
+    rows.push({svc:'Risk Advisory', section:true});
+    rows.push({ref:'5.1', area:'Corporate Governance & Shareholding Design', body:'Internal', scope:'Advise on company type, director roles, shareholder rights and governance framework; prepare share allotment, transfer documentation and ESOP structures', deliverable:'Corporate governance framework document; shareholding structure chart; share allotment and transfer documentation; ESOP plan and vesting schedule', owner:'SGA'});
+    rows.push({ref:'5.2', area:'Regulatory Compliance Advisory', body:'Internal', scope:'Coordinate MOM compliance, regulatory filings, and compliance calendar setup; coordinate sector-specific filings including MAS where required', deliverable:'Compliance calendar with filing deadlines; MOM filing records; MAS coordination log', owner:'SGA'});
+    rows.push({ref:'5.3', area:'Contract & Legal Operations Setup', body:'Internal', scope:'Contract and legal operations setup including documentation structure and governance framework; vendor and supplier contract management', deliverable:'Signed vendor and supplier contracts; customer commercial agreements; contract repository index', owner:'SGA'});
+    rows.push({ref:'5.4', area:'Due Diligence & Strategic Transactions', body:'Internal', scope:'Legal due diligence readiness including corporate records review, contract repository review and regulatory documentation readiness; strategic transaction structuring', deliverable:'Due diligence readiness report; corporate records review summary; shareholder agreements; investment documentation package', owner:'SGA'});
+    rows.push({ref:'5.5', area:'Litigation & Dispute Risk Assessment', body:'Internal', scope:'Legal risk assessment of disputes and litigation exposure including documentation review and dispute strategy preparation', deliverable:'Legal risk assessment report; litigation exposure summary; dispute strategy memorandum', owner:'SGA'});
+  }
+
+  if (S.auditSupport) {
+    rows.push({svc:'Audit Support', section:true});
+    rows.push({ref:'6.1', area:'Audit Preparation (PBC)', body:'ACRA / ISCA', scope:'Compile trial balance, lead schedules, tie-outs, and flux analyses; pre-validate supporting evidence before external audit', deliverable:'PBC binder; variance commentary', owner:'SGA'});
+    rows.push({ref:'6.2', area:'External Liaison & Coordination', body:'ACRA / ISCA', scope:'Manage audit timeline, query logs, and evidence uploads; act as single PoC for client and auditor', deliverable:'Query tracker; status dashboard', owner:'SGA'});
+    rows.push({ref:'6.3', area:'Policy & Control Narratives', body:'ACRA', scope:'Document process flows with embedded controls (O2C, P2P, R2R, Treasury)', deliverable:'Narrative binder; control matrix', owner:'SGA'});
+    rows.push({ref:'6.4', area:'Controls Testing (SOX-Lite)', body:'ACRA', scope:'Test key controls for design and effectiveness; remediate gaps', deliverable:'Test scripts; exceptions log', owner:'SGA'});
+    rows.push({ref:'6.5', area:'Documentation Governance', body:'ACRA', scope:'Standardize retention periods, folder naming, and access controls', deliverable:'Retention policy; audit trail report', owner:'SGA'});
+    rows.push({ref:'6.6', area:'Issue Remediation & Follow-up', body:'ACRA', scope:'Track management-letter observations and closure', deliverable:'ML tracker; closure proof', owner:'SGA'});
+    rows.push({ref:'6.7', area:'Audit Closure Review', body:'ACRA / ISCA', scope:'Post-audit debrief and next-cycle readiness assessment', deliverable:'Closure review memo', owner:'SGA'});
+  }
+
+  if (S.employmentPass) {
+    rows.push({svc:'Employment Pass (EP)', section:true});
+    rows.push({ref:'EP.1', area:'Documentation Compilation', body:'MOM', scope:'Compile employee documentation - resume, educational certificates, offer letter, and employer company documents', deliverable:'Complete EP application package', owner:'Client → SGA'});
+    rows.push({ref:'EP.2', area:'MOM Application Submission', body:'MOM', scope:'Prepare and submit EP/S-Pass application to Ministry of Manpower via EP Online', deliverable:'Application submitted; IPA or outcome notification', owner:'SGA'});
+    rows.push({ref:'EP.3', area:'MOM Liaison & Follow-up', body:'MOM', scope:'Respond to MOM queries, provide supplementary information, and manage application status', deliverable:'Queries resolved; final outcome from MOM', owner:'SGA'});
+  }
+
+  return rows;
+}
+
+/* ── FOOTER UPDATE ── */
+function updateFooter() {
+  const chips = document.getElementById('footer-chips');
+  const priceEl = document.getElementById('footer-price');
+  const priceVal = document.getElementById('footer-price-val');
+  const priceSub = document.getElementById('footer-price-sub');
+  const countEl = document.getElementById('tb-count');
+  const countNum = document.getElementById('tb-count-num');
+  if (!chips) return;
+
+  const selected = [];
+  if (S.incorporation || S.companyStatus === 'new') selected.push({i:'ti-building', l:'Incorporation'});
+  if (S.residentDirector) selected.push({i:'ti-user-check', l:'Resident Director'});
+  if (S.bankAccount) selected.push({i:'ti-building-bank', l:'Bank Account'});
+  if (S.annualCompliance) selected.push({i:'ti-shield-check', l:'Annual Compliance'});
+  if (S.employmentPass) selected.push({i:'ti-passport', l:`EP (×${S.numApplicants})`});
+  if (S.riskAdvisory) selected.push({i:'ti-alert-triangle', l:'Risk Advisory'});
+  if (S.auditSupport) selected.push({i:'ti-zoom-check', l:'Audit Support'});
+  if (S.esop) selected.push({i:'ti-award', l:'ESOP'});
+  S.customServices.forEach(cs => selected.push({i:'ti-dots', l:cs}));
+
+  if (!selected.length) {
+    chips.innerHTML = '<span class="ob-chip-empty">No services selected yet</span>';
+    if (priceEl) priceEl.style.display = 'none';
+    if (countEl) countEl.style.display = 'none';
+    return;
+  }
+
+  chips.innerHTML = selected.map(s => `<span class="ob-chip"><i class="ti ${s.i}"></i>${s.l}</span>`).join('');
+  const fees = calcFees();
+  const displayTotal = getDisplayTotal(fees);
+  if (priceEl) priceEl.style.display = 'block';
+  if (priceVal) priceVal.textContent = displayTotal ? `USD ${displayTotal.toLocaleString()}` : 'See estimate';
+  if (priceSub) priceSub.textContent = hasOverride() ? 'adjusted · excl. GST' : (fees.optional.length || fees.custom.length ? '+ separate engagements' : 'excl. GST · indicative');
+  if (countEl) countEl.style.display = 'flex';
+  if (countNum) countNum.textContent = selected.length;
+}
+
+/* ══ PAGE ENGINE ══ */
+let curPage = 1;
+const PAGE_LABELS = {1:'Page 1', 2:'Page 2', 3:'Page 3', 4:'Page 4', 5:'Page 5'};
+const PAGE_TITLES = {1:'Client Background & Services', 2:'Delivery Roadmap', 3:'Information Required', 4:'Fee Estimate', 5:'Confirm & Submit'};
+
+function goPage(p) {
+  curPage = p;
+  const prog = document.getElementById('ob-prog');
+  if (prog) prog.style.width = Math.round((p-1)/4*90+5)+'%';
+  const ey = document.getElementById('tb-eyebrow'); if (ey) ey.textContent = PAGE_LABELS[p]||'';
+  const tl = document.getElementById('tb-title'); if (tl) tl.textContent = PAGE_TITLES[p]||'';
+  // Contact options unlock once Client Background & Services (Page 1) is complete
+  const contactBar = document.getElementById('ob-contact-bar');
+  if (contactBar) contactBar.style.display = p > 1 ? 'flex' : 'none';
+  for (let i=1; i<=5; i++) {
+    const item = document.querySelector(`.ob-pg-item[data-p="${i}"]`);
+    const circ = document.getElementById('pc'+i);
+    if (!item||!circ) continue;
+    item.classList.remove('active','done');
+    if (i<p) {item.classList.add('done');circ.innerHTML='<i class="ti ti-check" style="font-size:10px;"></i>';}
+    else if (i===p) {item.classList.add('active');circ.textContent=i;}
+    else circ.textContent=i;
+  }
+  const w = document.getElementById('qwrap');
+  if (w) {w.style.animation='none';void w.offsetWidth;w.style.animation='fadeUp .35s cubic-bezier(.4,0,.2,1)';}
+  document.querySelector('.ob-content')?.scrollTo(0,0);
+  if (p===1) renderPage1();
+  else if (p===2) renderPage2();
+  else if (p===3) renderPage3();
+  else if (p===4) renderPage4();
+  else renderPage5();
+}
+
+/* ══ PAGE 1 - SERVICE SELECTION ══ */
+function renderPage1() {
+  // ── Validation: what's missing, and which section it belongs to ──
+  const missing = [];
+  if (!S.founderType) missing.push({label:'Founder background - select local/PR or foreign individual', sec:'sec-founder'});
+  if (!S.shareholderType) missing.push({label:'Shareholding structure - select individual or corporate', sec:'sec-shareholding'});
+  if (!S.businessSize) missing.push({label:'Business stage - select newly incorporated, startup, or SME', sec:'sec-stage'});
+  if (S.businessSize && !S.gstStatus) missing.push({label:'GST registration status', sec:'sec-stage'});
+  if (S.businessActivity.length === 0) missing.push({label:'Business activity - select at least one', sec:'sec-activity'});
+  if (!(S.incorporation || S.annualCompliance || S.employmentPass
+        || S.riskAdvisory || S.auditSupport || S.esop || S.customServices.length > 0)) {
+    missing.push({label:'At least one service must be selected', sec:'sec-services'});
+  }
+  const canGenerate = missing.length === 0;
+  const showErr = S._attemptedSubmit && !canGenerate;
+  const errSecs = new Set(missing.map(m=>m.sec));
+  const secErr = (id) => showErr && errSecs.has(id) ? ' p1-err' : '';
+
+  const fLabel = (num, text) =>
+    `<div class="field-label">
+      <span class="field-num">${num}</span>
+      <span class="field-label-text">${text}</span>
+    </div>`;
+
+  document.getElementById('qwrap').innerHTML = `
+    <div class="q-eye"><div class="q-eye-line"></div><div class="q-eye-t">Page 1 · Client Background &amp; Services</div></div>
+    <div class="q-title">Tell us about your business,<br>then choose your services.</div>
+
+    <!-- ═══ PART A - CLIENT BACKGROUND ═══ -->
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+      <span style="font-size:10px;font-weight:700;color:#fff;background:var(--n);padding:4px 11px;border-radius:100px;letter-spacing:.05em;">PART A</span>
+      <span style="font-size:15px;font-weight:600;color:var(--n);">Your business background</span>
+      <span style="flex:1;height:1px;background:var(--border);"></span>
+    </div>
+
+    <!-- Founder background -->
+    <div class="p1-section${secErr('sec-founder')}" id="sec-founder">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-blue"></div>
+        <span class="p1-sec-label">Founder background</span>
+        <span class="p1-sec-tag tag-blue">Who's behind the company?</span>
+      </div>
+      <div class="sel-2">
+        <div class="sel-card${S.founderType==='local'?' on':''}" onclick="S.founderType='local';S.residentDirector=false;S._rdAnswered=true;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-map-pin"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Local citizen / PR</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card${S.founderType==='foreign'?' on':''}" onclick="S.founderType='foreign';S._rdAnswered=false;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-plane"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Foreign individual</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+      </div>
+      ${S.founderType ? `
+      <div class="branch-box">
+        <div class="branch-q">Do you have a Singapore resident director?</div>
+        <div class="branch-s">Required by Companies Act s145. If not, SGA provides one.</div>
+        <div class="branch-btns">
+          <button class="branch-btn${S._rdAnswered&&!S.residentDirector?' yes':''}" onclick="S.residentDirector=false;S._rdAnswered=true;updateFooter();renderPage1()"><i class="ti ti-check"></i> Yes - I have one</button>
+          <button class="branch-btn${S.residentDirector?' no':''}" onclick="S.residentDirector=true;S._rdAnswered=true;updateFooter();renderPage1()"><i class="ti ti-plus"></i> No - SGA provides one</button>
+        </div>
+        ${S._rdAnswered&&!S.residentDirector?'<div class="branch-result yes-r"><i class="ti ti-circle-check" style="font-size:13px;"></i> Confirmed - noadditional service needed.</div>':''}
+        ${S.residentDirector?'<div class="branch-result no-r"><i class="ti ti-info-circle" style="font-size:13px;"></i> Resident Director added to your package.</div>':''}
+      </div>` : ''}
+    </div>
+
+    <!-- Shareholding -->
+    <div class="p1-section${secErr('sec-shareholding')}" id="sec-shareholding">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-violet"></div>
+        <span class="p1-sec-label">Shareholding structure</span>
+        <span class="p1-sec-tag tag-violet">Who owns the company?</span>
+      </div>
+      <div class="sel-2">
+        <div class="sel-card${S.shareholderType==='individual'?' on':''}" onclick="S.shareholderType='individual';renderPage1()">
+          <div class="sel-ico"><i class="ti ti-users"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Individual shareholders only</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card${S.shareholderType==='corporate'?' on':''}" onclick="S.shareholderType='corporate';renderPage1()">
+          <div class="sel-ico"><i class="ti ti-building-community"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Corporate shareholders involved</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business size + GST -->
+    <div class="p1-section${secErr('sec-stage')}" id="sec-stage">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-amber"></div>
+        <span class="p1-sec-label">Business stage & tax status</span>
+        <span class="p1-sec-tag tag-amber">Where are you now?</span>
+      </div>
+      <div class="sel-list">
+        <div class="sel-card${S.businessSize==='new_co'?' on':''}" onclick="S.businessSize='new_co';S.companyStatus='new';applyBankAccountRule();updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-seedling"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Newly incorporated</div><div class="sel-desc">Pre-operational or early-stage</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card${S.businessSize==='startup'?' on':''}" onclick="S.businessSize='startup';S.companyStatus='new';applyBankAccountRule();updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-rocket"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Startup / growth company</div><div class="sel-desc">Revenue-generating or scaling</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card${S.businessSize==='sme'?' on':''}" onclick="S.businessSize='sme';S.companyStatus='existing';applyBankAccountRule();updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-building-skyscraper"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Established SME / enterprise</div><div class="sel-desc">Mature operations</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+      </div>
+      ${S.businessSize ? `
+      <div style="margin-top:14px;">
+        <div style="font-size:11px;font-weight:600;color:#6B7280;margin-bottom:8px;margin-top:2px;">GST registration status</div>
+        <div class="pill-wrap">
+          <div class="sel-pill${S.gstStatus==='registered'?' on':''}" onclick="S.gstStatus='registered';renderPage1()">Registered</div>
+          <div class="sel-pill${S.gstStatus==='not'?' on':''}" onclick="S.gstStatus='not';renderPage1()">Not registered</div>
+          <div class="sel-pill${S.gstStatus==='soon'?' on':''}" onclick="S.gstStatus='soon';renderPage1()">Expecting to register soon</div>
+        </div>
+      </div>` : ''}
+    </div>
+
+    <!-- Business activity -->
+    <div class="p1-section${secErr('sec-activity')}" id="sec-activity">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-teal"></div>
+        <span class="p1-sec-label">Business activity</span>
+        <span class="p1-sec-tag tag-teal">What does your company do?</span>
+      </div>
+      <div class="pill-wrap">
+        ${[
+          {v:'tech',i:'ti-cpu',l:'Technology'},{v:'services',i:'ti-briefcase',l:'Services'},
+          {v:'trading',i:'ti-arrows-exchange',l:'Trading'},{v:'manufacturing',i:'ti-settings',l:'Manufacturing'},
+          {v:'ecommerce',i:'ti-shopping-cart',l:'E-commerce'},{v:'investment',i:'ti-chart-pie',l:'Investment / Holding'},
+          {v:'other',i:'ti-dots',l:'Other'},
+        ].map(o=>`<div class="sel-pill${S.businessActivity.includes(o.v)?' on':''}" onclick="toggleActivity('${o.v}')"><i class="ti ${o.i}"></i>${o.l}</div>`).join('')}
+      </div>
+    </div>
+
+    <!-- ═══ PART B - SCOPE OF SERVICES ═══ -->
+    <div style="display:flex;align-items:center;gap:12px;margin:44px 0 18px;padding-top:40px;border-top:1px solid var(--border);">
+      <span style="font-size:10px;font-weight:700;color:#fff;background:var(--r);padding:4px 11px;border-radius:100px;letter-spacing:.05em;">PART B</span>
+      <span style="font-size:15px;font-weight:600;color:var(--n);">Scope of services</span>
+      <span style="flex:1;height:1px;background:var(--border);"></span>
+    </div>
+
+    <!-- SGA USP - placement to be confirmed with SGA -->
+    <div style="background:var(--n);border-radius:16px;padding:18px 22px;margin-bottom:24px;display:flex;gap:18px;align-items:flex-start;">
+      <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <i class="ti ti-award" style="font-size:18px;color:#fff;"></i>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;">Why businesses choose SGA</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);line-height:1.7;">One accountable team across incorporation, compliance, tax and advisory - a single point of contact, fixed and transparent fees, and 200+ Singapore companies served with a 100% on-time delivery record.</div>
+      </div>
+    </div>
+
+    <!-- Core services -->
+    <div class="p1-section${secErr('sec-services')}" id="sec-services">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-red"></div>
+        <span class="p1-sec-label">Core services</span>
+        <span class="p1-sec-tag tag-red">Fixed scope · identifiable fees</span>
+      </div>
+      <div class="sel-list">
+        ${S.companyStatus!=='existing'?`
+        <div class="sel-card${S.incorporation?' on':''}" onclick="S.incorporation=!S.incorporation;if(S.incorporation)S.annualCompliance=true;applyBankAccountRule();updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-building"></i></div>
+          <div class="sel-card-body">
+            <div class="sel-name">Company Incorporation / Business Setup</div>
+            <div class="sel-desc">Bank Account Opening bundled automatically</div>
+          </div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>` : `
+        <div class="sel-card" style="opacity:.4;cursor:not-allowed;">
+          <div class="sel-ico"><i class="ti ti-building"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Company Incorporation / Business Setup</div><div class="sel-desc">Not applicable for existing companies</div></div>
+        </div>`}
+        <div class="sel-card${S.annualCompliance?' on':''}" onclick="S.annualCompliance=!S.annualCompliance;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-shield-check"></i></div>
+          <div class="sel-card-body">
+            <div class="sel-name">Annual Compliance</div>
+            <div class="sel-desc">GST · ECI · Form C/C-S · AGM · ACRA Annual Return</div>
+          </div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card${S.employmentPass?' on':''}" onclick="S.employmentPass=!S.employmentPass;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-passport"></i></div>
+          <div class="sel-card-body">
+            <div class="sel-name">Employment Visa Application</div>
+            <div class="sel-desc">EP · S-Pass · EntrePass</div>
+          </div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        ${S.employmentPass?`
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px 16px;">
+          <div style="font-size:11px;font-weight:600;color:var(--n);margin-bottom:9px;">Number of applicants</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <button onclick="S.numApplicants=Math.max(1,S.numApplicants-1);updateFooter();renderPage1()" style="width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--n);">−</button>
+            <span style="font-size:20px;font-weight:700;color:var(--n);min-width:24px;text-align:center;">${S.numApplicants}</span>
+            <button onclick="S.numApplicants=Math.min(10,S.numApplicants+1);updateFooter();renderPage1()" style="width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--n);">+</button>
+            <span style="font-size:11px;color:var(--muted);">applicant${S.numApplicants>1?'s':''}</span>
+          </div>
+        </div>`:''}
+      </div>
+      ${S.incorporation&&S.companyStatus==='new'?'<div class="info-band"><i class="ti ti-building-bank" style="font-size:12px;margin-right:5px;vertical-align:-1px;"></i><strong>Bank Account Opening is bundled</strong> - set up in parallel with Incorporation, same KYC.</div>':''}
+    </div>
+
+    <!-- Optional add-ons -->
+    <div class="p1-section">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-green"></div>
+        <span class="p1-sec-label">Optional add-ons</span>
+        <span class="p1-sec-tag tag-green">Separate engagement letter</span>
+      </div>
+      <div class="sel-2">
+        <div class="sel-card has-tip${S.esop?' on':''}" data-tip="Design and administer an Employee Share Option Plan - vesting schedules, option pool sizing, and grant documentation." onclick="S.esop=!S.esop;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-award"></i></div>
+          <div class="sel-card-body"><div class="sel-name">ESOP Advisory</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card has-tip${S.auditSupport?' on':''}" data-tip="Hands-on support preparing for and managing an external statutory audit - PBC schedules, query tracking, and controls documentation." onclick="S.auditSupport=!S.auditSupport;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-zoom-check"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Audit Support</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+        <div class="sel-card has-tip${S.riskAdvisory?' on':''}" data-tip="Corporate governance, regulatory compliance, contract operations, and due-diligence advisory for higher-risk or complex structures." onclick="S.riskAdvisory=!S.riskAdvisory;updateFooter();renderPage1()">
+          <div class="sel-ico"><i class="ti ti-alert-triangle"></i></div>
+          <div class="sel-card-body"><div class="sel-name">Risk Advisory Consulting</div></div>
+          <div class="sel-dot"><i class="ti ti-check"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom requirements -->
+    <div class="p1-section">
+      <div class="p1-sec-hdr">
+        <div class="p1-sec-accent accent-slate"></div>
+        <span class="p1-sec-label">Custom requirements</span>
+        <span class="p1-sec-tag tag-slate">Pricing confirmed by SGA</span>
+      </div>
+      <div class="pill-wrap">
+        ${[
+          {l:'GST Registration & Filing', d:'Register for GST with IRAS and prepare recurring GST F5 returns.'},
+          {l:'Fractional CFO', d:'Part-time senior finance leadership - reporting, forecasting, and board support.'},
+          {l:'Corporate Restructuring', d:'Reorganise share structure, entities, or group holdings for tax or governance reasons.'},
+          {l:'Risk Advisory Premium', d:'Extended risk advisory scope beyond the standard offering, scoped to your case.'},
+          {l:'Transfer Pricing', d:'Documentation and policy for related-party transactions under IRAS transfer pricing rules.'},
+          {l:'Intercompany Transactions', d:'Structuring and accounting treatment for cross-entity transactions and agreements.'},
+          {l:'Statutory Audit', d:'Full independent statutory audit of financial statements by a licensed auditor.'},
+          {l:'None of the above', d:'No custom requirements - only the services selected above.'},
+        ].map(cv=>`
+          <div class="sel-pill has-tip${S.customServices.includes(cv.l)?' on':''}" data-tip="${cv.d}" onclick="toggleCustom('${cv.l}')">${cv.l}</div>
+        `).join('')}
+      </div>
+    </div>
+
+    ${showErr ? `
+    <div class="p1-error-banner" id="p1-error-banner">
+      <i class="ti ti-alert-circle"></i>
+      <div>
+        <div class="p1-error-title">Please complete the following before generating your plan</div>
+        <div class="p1-error-list">${missing.map(m=>`• ${m.label}`).join('<br>')}</div>
+      </div>
+    </div>` : ''}
+
+    <div style="margin-top:28px;display:flex;gap:9px;align-items:center;">
+      <button class="btn btn-n" style="flex:1;justify-content:center;padding:13px;font-size:14px;font-weight:700;"
+        onclick="attemptGeneratePlan()">
+        Generate my plan <i class="ti ti-sparkles"></i>
+      </button>
+      <button class="btn btn-wa" onclick="window.open('https://wa.me/6500000000','_blank')" style="padding:13px 16px;"><i class="ti ti-brand-whatsapp"></i></button>
+    </div>
+  `;
+  if (showErr) {
+    const firstSec = document.getElementById(missing[0].sec);
+    if (firstSec) firstSec.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+function attemptGeneratePlan() {
+  S._attemptedSubmit = true;
+  renderPage1();
+  const stillMissing = !(S.founderType && S.shareholderType && S.businessSize && S.gstStatus
+    && S.businessActivity.length > 0
+    && (S.incorporation || S.annualCompliance || S.employmentPass
+        || S.riskAdvisory || S.auditSupport || S.esop || S.customServices.length > 0));
+  if (!stillMissing) goPage(2);
+}
+
+function toggleActivity(v) {
+  if (S.businessActivity.includes(v)) S.businessActivity = S.businessActivity.filter(x=>x!==v);
+  else S.businessActivity.push(v);
+  renderPage1();
+}
+function toggleCustom(v) {
+  if (S.customServices.includes(v)) S.customServices = S.customServices.filter(x=>x!==v);
+  else S.customServices.push(v);
+  updateFooter(); renderPage1();
+}
+
+/* ══ PAGE 2 - DELIVERY TRACKER ══ */
+function renderPage2() {
+  const allRows = getTrackerRows();
+
+  const TIMELINE = {
+    '1.1':{when:'Day 1',        phase:'Engagement'},
+    '1.2':{when:'Day 2–3',      phase:'Engagement'},
+    '1.3':{when:'Day 1–5',      phase:'Docs'},
+    '1.4':{when:'Day 3–5',      phase:'Execution'},
+    '1.5':{when:'Day 5–10',     phase:'Execution'},
+    '1.6':{when:'Day 10',       phase:'Execution'},
+    '1.7':{when:'Day 10',       phase:'Execution'},
+    '1.8':{when:'Day 10–12',    phase:'Execution'},
+    '1.9':{when:'Day 12–14',    phase:'Handover'},
+    '2.1':{when:'Day 5–7',      phase:'Execution'},
+    '2.2':{when:'Ongoing',      phase:'Ongoing'},
+    '3.1':{when:'Day 1–5',      phase:'Docs'},
+    '3.2':{when:'Day 1–5',      phase:'Docs'},
+    '3.3':{when:'Day 5–10',     phase:'Execution'},
+    '3.4':{when:'Day 10–20',    phase:'Execution'},
+    '3.5':{when:'Day 20–30',    phase:'Handover'},
+    '4.1':{when:'31 Mar',       phase:'Annual'},
+    '4.2':{when:'3 mths FYE',   phase:'Annual'},
+    '4.3':{when:'Monthly / Qtrly', phase:'Recurring'},
+    '4.4':{when:'30 Nov',       phase:'Annual'},
+    '4.5':{when:'As incurred',  phase:'Recurring'},
+    '4.6':{when:'4 mths FYE',   phase:'Annual'},
+    '4.7':{when:'5 mths FYE',   phase:'Annual'},
+    '4.8':{when:'As required',  phase:'Ongoing'},
+    '5.1':{when:'Week 1–2',     phase:'Engagement'},
+    '5.2':{when:'Ongoing',      phase:'Ongoing'},
+    '5.3':{when:'Week 1–4',     phase:'Execution'},
+    '5.4':{when:'Week 1–4',     phase:'Execution'},
+    '5.5':{when:'Week 2–4',     phase:'Execution'},
+    '6.1':{when:'6 wks pre-audit', phase:'Prep'},
+    '6.2':{when:'During audit', phase:'Execution'},
+    '6.3':{when:'Week 1–3',     phase:'Prep'},
+    '6.4':{when:'Week 2–4',     phase:'Prep'},
+    '6.5':{when:'Week 1',       phase:'Prep'},
+    '6.6':{when:'Post-audit',   phase:'Handover'},
+    '6.7':{when:'Post-audit',   phase:'Handover'},
+    'EP.1':{when:'Day 1–5',     phase:'Docs'},
+    'EP.2':{when:'Day 5–10',    phase:'Execution'},
+    'EP.3':{when:'Day 10–30',   phase:'Execution'},
+  };
+
+  const PHASE_COLORS = {
+    'Engagement': ['#EBF0F8','#002244'],
+    'Docs':       ['#FFF8E7','#7A5C00'],
+    'Execution':  ['#E8F5E9','#1A6B3C'],
+    'Handover':   ['#F3E5F5','#7B1FA2'],
+    'Annual':     ['#FDEAEA','#C41E3A'],
+    'Recurring':  ['#F5F5F3','#555555'],
+    'Ongoing':    ['#F5F5F3','#555555'],
+    'Prep':       ['#EBF0F8','#002244'],
+  };
+
+  const sections = [];
+  let cur = null;
+  allRows.forEach(r => {
+    if (r.section) { cur = {title: r.svc, rows: []}; sections.push(cur); }
+    else if (cur) cur.rows.push(r);
+  });
+
+  const ownerTag = o => {
+    if (o === 'SGA') return `<span style="background:#E8F5E9;color:#1A6B3C;font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;white-space:nowrap;">SGA</span>`;
+    if (o === 'SGA + Client') return `<span style="background:#FFF8E7;color:#7A5C00;font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;white-space:nowrap;">SGA + You</span>`;
+    return `<span style="background:#EBF0F8;color:#002244;font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;white-space:nowrap;">You → SGA</span>`;
+  };
+
+  document.getElementById('qwrap').innerHTML = `
+    <button class="back-btn" onclick="goPage(1)"><i class="ti ti-arrow-left"></i> Back</button>
+    <div class="q-eye"><div class="q-eye-line"></div><div class="q-eye-t">Page 2 · Delivery Roadmap</div></div>
+    <div class="q-title">Your delivery<br>roadmap.</div>
+    <div class="q-sub">Click a service to expand its stages. Hover any stage for the full scope and deliverable - nofees shown here, just the plan.</div>
+
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      ${sections.map((sec, si) => `
+        <div style="border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);">
+          <button onclick="toggleTracker(${si})" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;cursor:pointer;background:none;border:none;text-align:left;font-family:var(--font);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <span style="width:26px;height:26px;border-radius:8px;background:var(--n);color:#fff;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${si+1}</span>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:var(--n);">${sec.title}</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:1px;">${sec.rows.length} activities</div>
+              </div>
+            </div>
+            <i class="ti ti-chevron-down" id="ti-${si}" style="font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;"></i>
+          </button>
+          <div id="tb-${si}" style="display:none;border-top:1px solid var(--border);">
+            ${sec.rows.map((r, ri) => {
+              const t = TIMELINE[r.ref] || {when:'TBC', phase:'Other'};
+              const [pBg, pFc] = PHASE_COLORS[t.phase] || ['#F5F5F3','#555'];
+              const rowBg = r.flag ? '#FFFAF9' : ri%2===0 ? '#fff' : 'var(--bg)';
+              const tip = 'Scope: ' + r.scope + '  |  Deliverable: ' + r.deliverable;
+              return `
+              <div class="has-tip has-tip-wide" data-tip="${tip}" style="display:grid;grid-template-columns:80px 1fr;border-bottom:1px solid rgba(0,0,0,.05);background:${rowBg};cursor:help;">
+                <!-- Date -->
+                <div style="padding:12px 10px;border-right:1px solid rgba(0,0,0,.05);display:flex;flex-direction:column;gap:5px;justify-content:flex-start;">
+                  <span style="font-size:11px;font-weight:700;color:${r.flag?'var(--r)':'var(--n)'};">${t.when}</span>
+                  <span style="display:inline-block;background:${pBg};color:${pFc};font-size:8px;font-weight:500;padding:2px 8px;border-radius:100px;">${t.phase}</span>
+                </div>
+                <!-- Heading only - scope & deliverable revealed on hover -->
+                <div style="padding:12px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;">
+                  <div style="font-size:12px;font-weight:600;color:${r.flag?'var(--r)':'var(--n)'};flex:1;line-height:1.4;">
+                    ${r.flag?'<i class="ti ti-alert-triangle" style="font-size:10px;margin-right:3px;"></i>':''}
+                    <span style="font-size:9px;color:var(--muted);font-weight:500;margin-right:5px;">${r.ref}</span>${r.area}
+                    <i class="ti ti-info-circle" style="font-size:11px;color:var(--muted);margin-left:5px;vertical-align:-1px;"></i>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;margin-top:1px;">
+                    <span style="background:#EBF0F8;color:var(--n);font-size:8px;font-weight:500;padding:2px 8px;border-radius:100px;">${r.body}</span>
+                    ${ownerTag(r.owner)}
+                  </div>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>`).join('')}
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:16px;">
+      <button class="btn btn-g" onclick="goPage(1)"><i class="ti ti-arrow-left"></i></button>
+      <button class="btn btn-n" onclick="goPage(3)" style="flex:1;justify-content:center;">Next - Information Required <i class="ti ti-arrow-right"></i></button>
+    </div>
+  `;
+}
+
+function toggleTracker(si) {
+  const body = document.getElementById('tb-'+si);
+  const ico  = document.getElementById('ti-'+si);
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : 'block';
+  if (ico) ico.style.transform = open ? '' : 'rotate(180deg)';
+}
+
+/* ══ PAGE 3 - INFORMATION REQUIREMENTS ══ */
+function renderPage3() {
+  const docs = getRequiredDocs();
+  const clientDocs = docs.filter(d => !d.sga);
+  const sgaDocs = docs.filter(d => d.sga);
+  const readyCount = clientDocs.filter(d => S.docsReady[d.id]).length;
+
+  const natures = ['Information','Document','Decision','Output'].filter(n => clientDocs.some(d=>d.nature===n));
+
+  const passesFilter = d => {
+    if (S._docFilterNature !== 'all' && d.nature !== S._docFilterNature) return false;
+    if (S._docFilterStatus === 'ready' && !S.docsReady[d.id]) return false;
+    if (S._docFilterStatus === 'pending' && S.docsReady[d.id]) return false;
+    return true;
+  };
+
+  const groups = [
+    {title:'Company Information',            icon:'ti-building',          items: clientDocs.filter(d => d.id <= 12)},
+    {title:'Directors & Shareholders',       icon:'ti-users',             items: clientDocs.filter(d => d.id >= 13 && d.id <= 23)},
+    {title:'Corporate Shareholder Documents',icon:'ti-building-community',items: clientDocs.filter(d => [24,25,26].includes(d.id))},
+    {title:'Bank Account Documents',         icon:'ti-building-bank',     items: clientDocs.filter(d => [34,35].includes(d.id))},
+    {title:'Employment Pass Documents',      icon:'ti-passport',          items: clientDocs.filter(d => d.id >= 37 && d.id <= 39)},
+  ].map(g => ({...g, filtered: g.items.filter(passesFilter)})).filter(g => g.items.length > 0);
+
+  const natTag = nat => {
+    const map = {'Information':['#EBF0F8','var(--n)'],'Document':['#E8F5E9','var(--g)'],'Decision':['#FFF8E7','#7A5C00'],'Output':['#F3E5F5','#7B1FA2']};
+    const [bg,fc] = map[nat]||['#f0f0f0','#555'];
+    return `<span style="background:${bg};color:${fc};font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;white-space:nowrap;">${nat}</span>`;
+  };
+
+  const filterPill = (active, label, onclick) =>
+    `<div class="sel-pill${active?' on':''}" onclick="${onclick}" style="font-size:11px;padding:7px 14px;">${label}</div>`;
+
+  document.getElementById('qwrap').innerHTML = `
+    <button class="back-btn" onclick="goPage(2)"><i class="ti ti-arrow-left"></i> Back</button>
+    <div class="q-eye"><div class="q-eye-line"></div><div class="q-eye-t">Page 3 · Information Required</div></div>
+    <div class="q-title">What we'll need<br>from you.</div>
+    <div class="q-sub">Tick items as you prepare them. Documents are uploaded on your dashboard - not here.</div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <div style="height:3px;background:var(--border);border-radius:100px;overflow:hidden;flex:1;margin-right:12px;">
+        <div id="doc-prog" style="height:100%;background:var(--n);border-radius:2px;width:${clientDocs.length?Math.round(readyCount/clientDocs.length*100):0}%;transition:width .4s;"></div>
+      </div>
+      <span style="font-size:10px;font-weight:600;color:var(--n);background:#EBF0F8;padding:3px 10px;border-radius:100px;white-space:nowrap;" id="doc-prog-lbl">${readyCount} / ${clientDocs.length} ready</span>
+    </div>
+
+    <!-- Filters -->
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+        <i class="ti ti-filter" style="font-size:12px;color:var(--muted);"></i>
+        <span style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Filter by type</span>
+      </div>
+      <div class="pill-wrap" style="margin-bottom:10px;">
+        ${filterPill(S._docFilterNature==='all','All types',`S._docFilterNature='all';renderPage3()`)}
+        ${natures.map(n=>filterPill(S._docFilterNature===n, n, `S._docFilterNature='${n}';renderPage3()`)).join('')}
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:8px;">
+        <i class="ti ti-list-check" style="font-size:12px;color:var(--muted);"></i>
+        <span style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;">Filter by status</span>
+      </div>
+      <div class="pill-wrap">
+        ${filterPill(S._docFilterStatus==='all','All','S._docFilterStatus=\'all\';renderPage3()')}
+        ${filterPill(S._docFilterStatus==='pending','Pending only','S._docFilterStatus=\'pending\';renderPage3()')}
+        ${filterPill(S._docFilterStatus==='ready','Ready only','S._docFilterStatus=\'ready\';renderPage3()')}
+      </div>
+    </div>
+
+    ${groups.map((g,gi) => { const isOpen = S._docGroupOpen[gi] !== undefined ? S._docGroupOpen[gi] : true; return `
+      <div style="background:var(--white);border:1.5px solid var(--border);border-radius:16px;margin-bottom:8px;overflow:hidden;${g.filtered.length===0?'opacity:.45;':''}">
+        <div onclick="toggleDocGroup(${gi})" style="display:flex;align-items:center;justify-content:space-between;padding:15px 18px;cursor:pointer;user-select:none;">
+          <div style="display:flex;align-items:center;gap:11px;">
+            <div style="width:34px;height:34px;border-radius:10px;background:#EBF0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="ti ${g.icon}" style="font-size:15px;color:var(--n);"></i>
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:var(--n);">${g.title}</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:1px;">${g.filtered.length} of ${g.items.length} item${g.items.length>1?'s':''} shown</div>
+            </div>
+          </div>
+          <i class="ti ti-chevron-down" id="dg-ico-${gi}" style="font-size:14px;color:var(--muted);transition:transform .25s;flex-shrink:0;${isOpen?'transform:rotate(180deg);':''}"></i>
+        </div>
+        <div id="dg-body-${gi}" style="display:${isOpen?'block':'none'};border-top:1px solid var(--border);padding:8px 14px 12px;">
+          ${g.filtered.length===0?'<div style="font-size:11px;color:var(--muted);padding:10px 4px;">No items match the current filters.</div>':''}
+          ${g.filtered.map((d,i) => `
+            <div class="ir-item" onclick="toggleDoc(${d.id})" style="${i%2!==0?'background:var(--bg);':''}">
+              <div class="ir-check${S.docsReady[d.id]?' on':''}" style="${S.docsReady[d.id]?'background:var(--g);border-color:var(--g);':''}"><i class="ti ti-check" style="${S.docsReady[d.id]?'color:#fff;':''}"></i></div>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:12px;font-weight:600;color:var(--n);">${d.name}</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+                ${natTag(d.nature)}
+                <span class="ir-status" style="${S.docsReady[d.id]?'background:#E8F5E9;color:var(--g);':''}">${S.docsReady[d.id]?'Ready':'Pending'}</span>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`; }).join('')}
+
+    <!-- SGA-provided -->
+    <div style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden;">
+      <div onclick="toggleDocGroup('sga')" style="display:flex;align-items:center;justify-content:space-between;padding:15px 18px;cursor:pointer;user-select:none;opacity:.75;">
+        <div style="display:flex;align-items:center;gap:11px;">
+          <div style="width:34px;height:34px;border-radius:6px;background:#EBF0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="ti ti-building" style="font-size:15px;color:var(--n);"></i>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--n);">SGA provides - noaction required</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:1px;">${sgaDocs.length} item${sgaDocs.length>1?'s':''} · SGA ✦</div>
+          </div>
+        </div>
+        <i class="ti ti-chevron-down" id="dg-ico-sga" style="font-size:14px;color:var(--muted);transition:transform .25s;flex-shrink:0;"></i>
+      </div>
+      <div id="dg-body-sga" style="display:none;border-top:1px solid var(--border);padding:8px 14px 12px;">
+        ${sgaDocs.map(d => `
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:8px;margin-bottom:5px;background:var(--bg);">
+            <i class="ti ti-check-circle" style="font-size:13px;color:var(--n);flex-shrink:0;margin-top:2px;"></i>
+            <div>
+              <div style="font-size:12px;font-weight:600;color:var(--n);">${d.name} <span style="font-size:10px;font-weight:400;color:var(--muted);">· SGA ✦</span></div>
+
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:16px;">
+      <button class="btn btn-g" onclick="goPage(2)"><i class="ti ti-arrow-left"></i></button>
+      <button class="btn btn-n" onclick="goPage(4)" style="flex:1;justify-content:center;">Next - Fee Estimate <i class="ti ti-arrow-right"></i></button>
+    </div>
+  `;
+}
+
+function toggleDocGroup(gi) {
+  const body = document.getElementById('dg-body-'+gi);
+  const ico = document.getElementById('dg-ico-'+gi);
+  const open = body.style.display !== 'none';
+  if (gi !== 'sga') S._docGroupOpen[gi] = !open;
+  body.style.display = open ? 'none' : 'block';
+  if (ico) ico.style.transform = open ? '' : 'rotate(180deg)';
+}
+function toggleDoc(docId) {
+  S.docsReady[docId] = !S.docsReady[docId];
+  renderPage3();
+}
+
+/* ══ PAGE 4 - PRICING ESTIMATE ══ */
+function renderPage4() {
+  const fees = calcFees();
+  const qRef = S.quotationRef || ('SGA-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*9000)+1000));
+  S.quotationRef = qRef;
+
+  document.getElementById('qwrap').innerHTML = `
+    <button class="back-btn" onclick="goPage(3)"><i class="ti ti-arrow-left"></i> Back</button>
+    <div class="q-eye"><div class="q-eye-line"></div><div class="q-eye-t">Page 4 · Fee Estimate</div></div>
+    <div class="q-title">Your instant<br>quotation.</div>
+    <div class="q-sub">Government fees (ACRA, IRAS, MOM) are excluded and charged at cost.</div>
+
+    ${fees.phase1>0?`
+    <!-- Phase I -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">Phase I - New company</div>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:12px;">
+      <thead><tr>
+        <th style="font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid var(--border);text-align:left;">Service</th>
+        <th style="font-size:9px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;border-bottom:1px solid var(--border);text-align:right;width:120px;">Fee (USD)</th>
+      </tr></thead>
+      <tbody>
+        ${fees.phase1Items.map((item,i)=>`<tr style="background:${i%2===0?'var(--white)':'var(--bg)'};">
+          <td style="padding:10px;font-size:12px;font-weight:600;color:var(--n);">${item.label}</td>
+          <td style="padding:10px;text-align:center;"><span style="background:#E8F5E9;color:var(--g);font-size:9px;font-weight:500;padding:3px 10px;border-radius:100px;">INCLUDED</span></td>
+          <td style="padding:10px;text-align:right;font-size:13px;font-weight:700;color:var(--n);">USD ${item.amount.toLocaleString()}</td>
+
+        </tr>`).join('')}
+      </tbody>
+    </table>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-top:1.5px solid var(--border);margin-top:0;">
+      <span style="font-size:11px;font-weight:600;color:var(--muted);">Phase I subtotal</span>
+      <span style="font-size:15px;font-weight:700;color:var(--n);">USD ${fees.phase1.toLocaleString()}</span>
+    </div>
+`:''}
+
+    ${fees.ep>0?`
+    <!-- Employment Pass -->
+    <div style="font-size:10px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">Employment Pass</div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">
+        <div><div style="font-size:12px;font-weight:700;color:var(--n);">Legal & Advisory Fee (EP / S-Pass Application)</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">MOM submission, documentation and liaison · × ${S.numApplicants} applicant${S.numApplicants>1?'s':''}</div></div>
+        <div style="font-size:16px;font-weight:700;color:var(--n);white-space:nowrap;margin-left:16px;">USD ${fees.ep.toLocaleString()}</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--bg);">
+        <div><div style="font-size:12px;font-weight:600;color:var(--muted);">MOM Government Fee (payable to MOM directly)</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">Payable directly to MOM · not an SGA fee</div></div>
+        <div style="font-size:12px;color:var(--muted);white-space:nowrap;margin-left:16px;">SGD 500–600 / applicant</div>
+      </div>
+    </div>
+`:''}
+
+    ${fees.optional.length>0?`
+    <!-- Optional services -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">Optional services - separate engagement</div>
+    ${fees.optional.map(o=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:7px;">
+      <div><div style="font-size:12px;font-weight:700;color:var(--n);">${o.label}</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">${o.note}</div></div>
+      <span style="font-size:10px;font-weight:600;background:#FFF8E7;color:#7A5C00;padding:3px 10px;border-radius:100px;white-space:nowrap;">Separate LoE</span>
+    </div>`).join('')}`:''}
+
+    ${fees.custom.length>0?`
+    <!-- Custom services -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">Custom services - on assessment</div>
+    ${fees.custom.map(c=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--white);border:1px solid var(--border);border-radius:6px;margin-bottom:7px;">
+      <div><div style="font-size:12px;font-weight:700;color:var(--n);">${c.label}</div><div style="font-size:10px;color:var(--muted);margin-top:2px;">${c.note}</div></div>
+      <span style="font-size:10px;font-weight:600;background:#FDEAEA;color:var(--r);padding:3px 10px;border-radius:100px;white-space:nowrap;">On assessment</span>
+    </div>`).join('')}`:''}
+
+    <!-- Grand total -->
+    <div style="background:var(--n);border-radius:16px;padding:20px 24px;margin-top:16px;margin-bottom:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:11px;font-weight:500;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">${hasOverride()?'Calculated total':'Total engagement fee'}</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4);">excl. GST · govt fees charged at cost</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:32px;font-weight:700;color:${hasOverride()?'rgba(255,255,255,.4)':'#fff'};letter-spacing:-1px;${hasOverride()?'text-decoration:line-through;':''}">USD ${fees.total>0?fees.total.toLocaleString():'TBC'}</div>
+          ${fees.optional.length>0||fees.custom.length>0?'<div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;">+ separate engagements</div>':''}
+        </div>
+      </div>
+      ${hasOverride()?`
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);">
+        <div>
+          <div style="font-size:11px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;"><i class="ti ti-edit" style="font-size:11px;margin-right:3px;"></i>Adjusted total</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.55);max-width:340px;">${S.manualFeeNote?S.manualFeeNote:'Manually adjusted by SGA'}</div>
+        </div>
+        <div style="font-size:32px;font-weight:700;color:#fff;letter-spacing:-1px;">USD ${S.manualFeeOverride.toLocaleString()}</div>
+      </div>`:''}
+    </div>
+
+    <!-- Manual fee adjustment (internal / SGA use) -->
+    <div style="background:var(--white);border:1px dashed var(--border);border-radius:14px;padding:14px 18px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:${S._showFeeOverride||hasOverride()?'10px':'0'};cursor:pointer;" onclick="S._showFeeOverride=!S._showFeeOverride;renderPage4()">
+        <i class="ti ti-adjustments-horizontal" style="font-size:13px;color:var(--muted);"></i>
+        <span style="font-size:11px;font-weight:600;color:var(--muted);flex:1;">Manual fee override <span style="font-weight:400;"> - internal, use when the standard calculation needs adjusting</span></span>
+        <i class="ti ti-chevron-down" style="font-size:13px;color:var(--muted);transition:transform .2s;${S._showFeeOverride||hasOverride()?'transform:rotate(180deg);':''}"></i>
+      </div>
+      ${(S._showFeeOverride||hasOverride())?`
+      <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;">
+        <div style="flex:1;min-width:140px;">
+          <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Adjusted total (USD)</div>
+          <input id="fee-override-input" class="t-inp" style="margin-top:0;" type="number" min="0" step="1" placeholder="e.g. ${fees.total}" value="${S.manualFeeOverride!=null?S.manualFeeOverride:''}">
+        </div>
+        <div style="flex:2;min-width:200px;">
+          <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Reason (shown on quotation)</div>
+          <input id="fee-override-note" class="t-inp" style="margin-top:0;" placeholder="e.g. Discount agreed with client" value="${S.manualFeeNote||''}">
+        </div>
+        <button class="btn btn-n" style="padding:11px 16px;" onclick="applyFeeOverride()"><i class="ti ti-check"></i> Apply</button>
+        ${hasOverride()?'<button class="btn btn-g" onclick="clearFeeOverride()">Clear</button>':''}
+      </div>`:''}
+    </div>
+
+    <!-- Quotation reference -->
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:16px 20px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <div>
+        <div style="font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">Quotation reference</div>
+        <div style="font-size:16px;font-weight:700;color:var(--n);letter-spacing:.5px;font-feature-settings:'tnum';">${qRef}</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="btn btn-n" style="padding:10px 16px;font-size:12px;" onclick="openQuoteModal()"><i class="ti ti-link"></i> Share</button>
+        <button class="btn btn-wa" style="padding:10px 14px;" onclick="shareQuoteWA()"><i class="ti ti-brand-whatsapp"></i></button>
+        <button class="btn" style="padding:10px 16px;font-size:12px;background:#6B7280;color:#fff;" onclick="downloadQuotationPDF()"><i class="ti ti-file-download"></i> PDF</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:4px;">
+      <button class="btn btn-g" onclick="goPage(3)"><i class="ti ti-arrow-left"></i></button>
+      <button class="btn btn-n" onclick="goPage(5)" style="flex:1;justify-content:center;font-size:14px;padding:15px;"><i class="ti ti-send"></i> Proceed to Confirm &amp; Submit</button>
+    </div>
+  `;
+}
+
+/* ══ PAGE 5 - GO LIVE ══ */
+function renderPage5() {
+  document.getElementById('ob-prog').style.width = '100%';
+  const fees = calcFees();
+  const qRef = S.quotationRef;
+
+  document.getElementById('qwrap').innerHTML = `
+    <button class="back-btn" onclick="goPage(4)"><i class="ti ti-arrow-left"></i> Back</button>
+    <div class="q-eye"><div class="q-eye-line"></div><div class="q-eye-t">Page 5 · Confirm &amp; Submit</div></div>
+    <div class="q-title">One last step.</div>
+    <div class="q-sub">Confirm your details and submit. SGA will send the Letter of Engagement (NDA included) within 1 business day.</div>
+
+    <!-- Pre-filled details -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">5.1 · Confirm your details</div>
+    <div style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:20px 22px;margin-bottom:14px;">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;">Business full legal name</div>
+          <input class="t-inp" style="margin-top:0;" placeholder="e.g. InnovateTech Pte Ltd">
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;">Business email address</div>
+          <input class="t-inp" style="margin-top:0;" placeholder="e.g. alex@company.sg" type="email">
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;">Mobile number</div>
+          <input class="t-inp" style="margin-top:0;" placeholder="e.g. +65 9123 4567" type="tel">
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;">Contact person name <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></div>
+          <input class="t-inp" style="margin-top:0;" placeholder="e.g. Alex Chen">
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;">Quotation reference</div>
+          <div style="font-family:var(--font);font-size:18px;color:var(--n);letter-spacing:.5px;">${qRef}</div>
+        </div>
+        <div style="font-size:10px;color:var(--muted);text-align:right;line-height:1.6;">This reference is shared with SGA<br>to link your proposal to this account</div>
+      </div>
+    </div>
+
+    <!-- Proposal summary -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">5.2 · Your proposal summary</div>
+    <div style="background:var(--n);border-radius:16px;padding:18px 22px;margin-bottom:14px;">
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        ${[
+          S.incorporation||S.companyStatus==='new'?{i:'ti-building',l:'Incorporation'}:null,
+          S.residentDirector?{i:'ti-user-check',l:'Resident Director'}:null,
+          S.bankAccount?{i:'ti-building-bank',l:'Bank Account'}:null,
+          S.annualCompliance?{i:'ti-shield-check',l:'Annual Compliance'}:null,
+          S.employmentPass?{i:'ti-passport',l:`EP × ${S.numApplicants}`}:null,
+          S.riskAdvisory?{i:'ti-alert-triangle',l:'Risk Advisory'}:null,
+          S.auditSupport?{i:'ti-zoom-check',l:'Audit Support'}:null,
+          S.esop?{i:'ti-award',l:'ESOP'}:null,
+        ].filter(Boolean).map(s=>`<span style="background:rgba(255,255,255,.12);color:#fff;font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;"><i class="ti ${s.i}" style="font-size:9px;"></i>${s.l}</span>`).join('')}
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);">
+        <div style="font-size:11px;color:rgba(255,255,255,.5);">Total engagement fee (excl. GST)${hasOverride()?' · adjusted':''}</div>
+        <div style="font-size:20px;font-weight:700;color:#fff;">USD ${getDisplayTotal(fees).toLocaleString()}</div>
+      </div>
+    </div>
+
+    <!-- What happens next -->
+    <div style="font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">5.3 · What happens next</div>
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 20px;margin-bottom:14px;">
+      ${[
+        {n:1,t:'SGA reviews your proposal',d:'SGA team reviews your selections and contacts you within 1 business day to confirm scope and any clarifications.'},
+        {n:2,t:'Engagement letter & NDA sent',d:'Letter of Engagement (including NDA) is sent for e-signature. Finalises services, scope, and fees.'},
+        {n:3,t:'Client workspace activates',d:'Document upload portal, live delivery tracker (Page 2), SGA team contacts, and deadline reminders all go live after signing.'},
+        {n:4,t:'Work begins',d:'SGA begins engagement per the delivery roadmap. You track every activity in real time from your dashboard.'},
+      ].map(s=>`<div class="ns-row"><div class="ns-num">${s.n}</div><div><div class="ns-name">${s.t}</div><div class="ns-sub">${s.d}</div></div></div>`).join('')}
+    </div>
+
+
+
+    <div style="display:flex;gap:10px;">
+      <button class="btn btn-r" style="flex:1;justify-content:center;font-size:14px;padding:15px;" onclick="submitProposal()">
+        <i class="ti ti-check"></i> Accept proposal & create account
+      </button>
+      <button class="btn btn-wa" style="padding:15px 18px;" onclick="window.open('https://wa.me/6500000000?text=Hi+SGA%2C+my+quotation+reference+is+${qRef}','_blank')"><i class="ti ti-brand-whatsapp"></i></button>
+    </div>
+  `;
+}
+
+function submitProposal() {
+  document.getElementById('qwrap').innerHTML = `
+    <div style="text-align:center;max-width:480px;margin:0 auto;padding:20px 0;">
+      <div style="width:72px;height:72px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><i class="ti ti-check" style="color:#fff;font-size:32px;"></i></div>
+      <div style="font-family:var(--font);font-size:32px;color:var(--n);margin-bottom:8px;line-height:1.2;">You're all set.</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;">Your proposal has been submitted. SGA will review it and reach out within <strong>1 business day</strong> with your Letter of Engagement.</div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px 20px;margin-bottom:20px;text-align:left;">
+        <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;">Your quotation reference</div>
+        <div style="font-family:var(--font);font-size:24px;color:var(--n);letter-spacing:.5px;margin-bottom:4px;">${S.quotationRef}</div>
+        <div style="font-size:10px;color:var(--muted);">Use this reference in all communications with SGA</div>
+      </div>
+      <div style="display:flex;gap:9px;justify-content:center;">
+        <button class="btn btn-wa" style="flex:1;justify-content:center;" onclick="window.open('https://wa.me/6500000000','_blank')"><i class="ti ti-brand-whatsapp"></i> Chat with SGA</button>
+        <button class="btn" style="flex:1;justify-content:center;background:#6B7280;color:#fff;" onclick="downloadQuotationPDF()"><i class="ti ti-file-download"></i> Download PDF</button>
+        <button class="btn btn-g" onclick="showLanding()" style="flex:1;justify-content:center;"><i class="ti ti-home"></i> Back to home</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('ob-prog').style.background = 'var(--g)';
+}
+
+/* ── QUOTE MODAL ── */
+function openQuoteModal() {
+  const ref = S.quotationRef;
+  document.getElementById('modal-ref').textContent = ref;
+  document.getElementById('modal-link').textContent = 'https://sgconnect.sg/quote/'+ref;
+  document.getElementById('quote-modal').classList.add('show');
+}
+function closeModal() {document.getElementById('quote-modal').classList.remove('show');}
+function copyLink() {
+  const link = document.getElementById('modal-link').textContent;
+  navigator.clipboard.writeText(link).then(() => {
+    const btn = document.querySelector('#quote-modal .btn-n');
+    btn.innerHTML = '<i class="ti ti-check"></i> Copied!';
+    setTimeout(() => btn.innerHTML = '<i class="ti ti-copy"></i> Copy link', 2000);
+  });
+}
+function shareWA() { window.open('https://wa.me/?text=My+SGA+quotation+reference+is+'+S.quotationRef+'+%E2%80%94+'+document.getElementById('modal-link').textContent, '_blank'); }
+function shareQuoteWA() { openQuoteModal(); }
+
+/* ══ PDF GENERATION ══ */
+function downloadQuotationPDF() {
+  var fees = calcFees();
+  var qRef = S.quotationRef || 'SGA-DRAFT';
+  var now = new Date();
+  var today = now.toLocaleDateString('en-GB', {day:'2-digit', month:'long', year:'numeric'});
+  var monthYear = now.toLocaleDateString('en-GB', {month:'long', year:'numeric'});
+  var docTitle = 'Engagement Proposal';
+
+  var selectedServices = [
+    (S.incorporation || S.companyStatus === 'new') ? 'Company Incorporation & Bank Account Opening' : null,
+    S.residentDirector ? 'Resident Director' : null,
+    S.annualCompliance ? 'Annual Compliance' : null,
+    S.employmentPass ? ('Employment Visa ×' + S.numApplicants) : null,
+    S.riskAdvisory ? 'Risk Advisory' : null,
+    S.auditSupport ? 'Audit Support' : null,
+    S.esop ? 'ESOP Advisory' : null,
+  ].filter(Boolean).concat(S.customServices.filter(function(c){ return c !== 'None of the above'; }));
+
+  /* ── Client background facts (Section 1) ── */
+  var founderLbl = {local:'Local citizen / PR', foreign:'Foreign individual'}[S.founderType] || 'Not specified';
+  var shareholderLbl = {individual:'Individual shareholders only', corporate:'Corporate shareholders involved'}[S.shareholderType] || 'Not specified';
+  var stageLbl = {new_co:'Newly incorporated', startup:'Startup / growth company', sme:'Established SME / enterprise'}[S.businessSize] || 'Not specified';
+  var gstLbl = {registered:'Registered', not:'Not registered', soon:'Expecting to register soon'}[S.gstStatus] || 'Not specified';
+  var activityLbl = {tech:'Technology', services:'Services', trading:'Trading', manufacturing:'Manufacturing', ecommerce:'E-commerce', investment:'Investment / Holding', other:'Other'};
+  var activityText = (S.businessActivity.length ? S.businessActivity.map(function(a){return activityLbl[a]||a;}).join(', ') : 'Not specified');
+  var isNewCo = S.companyStatus === 'new';
+
+  var backgroundFacts = [
+    ['ti-map-pin', 'Founder background', founderLbl],
+    ['ti-user-check', 'Resident director', S.founderType ? (S.residentDirector ? 'SGA to provide' : 'Client already has one') : 'Not specified'],
+    ['ti-users', 'Shareholding structure', shareholderLbl],
+    ['ti-seedling', 'Business stage', stageLbl],
+    ['ti-receipt-tax', 'GST status', gstLbl],
+    ['ti-briefcase', 'Business activity', activityText],
+    ['ti-id-badge-2', 'Directors / shareholders', S.numDirectors + ' director(s) · ' + S.numShareholders + ' shareholder(s)'],
+  ];
+
+  /* ── Scope-of-services cards (Section 2) ── */
+  var serviceCards = [];
+  if (isNewCo || S.incorporation) serviceCards.push(['ti-building', 'Company Incorporation & Bank Account Opening', 'ACRA company registration and digital bank account opening, run in parallel on shared KYC.']);
+  if (S.residentDirector) serviceCards.push(['ti-user-check', 'Singapore Resident Director', 'Nominee resident director provided by SGA to satisfy the Companies Act requirement.']);
+  if (S.annualCompliance) serviceCards.push(['ti-shield-check', 'Annual Compliance', 'GST, ECI, Form C / C-S, AGM and ACRA Annual Return, handled on an ongoing basis.']);
+  if (S.employmentPass) serviceCards.push(['ti-passport', 'Employment Visa Application (×' + S.numApplicants + ')', 'MOM submission, documentation and liaison for each Employment Pass / S-Pass applicant.']);
+  if (S.riskAdvisory) serviceCards.push(['ti-alert-triangle', 'Risk Advisory Consulting', 'Corporate governance, regulatory compliance and contract-operations advisory.']);
+  if (S.auditSupport) serviceCards.push(['ti-zoom-check', 'Audit Support', 'Preparation and coordination support for an external statutory audit.']);
+  if (S.esop) serviceCards.push(['ti-award', 'ESOP Advisory', 'Employee share option plan design, vesting schedule and grant documentation.']);
+  S.customServices.filter(function(c){ return c !== 'None of the above'; }).forEach(function(c){
+    serviceCards.push(['ti-dots', c, 'Custom requirement - scope and pricing confirmed directly by SGA.']);
+  });
+
+  /* ── Fee ── */
+  var displayTotal = getDisplayTotal(fees);
+  var totalAmt = displayTotal > 0 ? ('USD ' + displayTotal.toLocaleString()) : 'On assessment';
+  var overrideNoteHTML = hasOverride()
+    ? '<div class="pdf-note">Fee manually adjusted from the calculated estimate of USD ' + fees.total.toLocaleString() + '.' + (S.manualFeeNote ? ' Reason: ' + S.manualFeeNote + '.' : '') + '</div>'
+    : '';
+
+  /* ── Annexure B - Information Required from Client ── */
+  var reqDocs = getRequiredDocs().filter(function(d){ return !d.sga; });
+  var annexBGroups = [
+    {title:'A. Company Information',             items: reqDocs.filter(function(d){ return d.id <= 12; })},
+    {title:'B. Directors & Shareholders',         items: reqDocs.filter(function(d){ return d.id >= 13 && d.id <= 23; })},
+    {title:'C. Corporate Shareholder Documents',  items: reqDocs.filter(function(d){ return [24,25,26].indexOf(d.id) > -1; })},
+    {title:'D. Bank Account Documents',           items: reqDocs.filter(function(d){ return [34,35].indexOf(d.id) > -1; })},
+    {title:'E. Employment Pass Documents',        items: reqDocs.filter(function(d){ return d.id >= 37 && d.id <= 39; })},
+  ].filter(function(g){ return g.items.length > 0; });
+
+  /* ══ Small render helpers (kept local - string-concat style to match the rest of this function) ══ */
+  function esc(s) { return String(s); }
+
+  function slideOpen(extraClass) { return '<div class="slide' + (extraClass ? ' ' + extraClass : '') + '">'; }
+  function slideClose() { return '</div>'; }
+
+  function brandMark() {
+    return '<div class="brand-mark"><div class="brand-red">SINGAPORE</div><div class="brand-navy">ACCOUNTANTS</div></div>';
+  }
+
+  function pdfFooter(label) {
+    return '<div class="pdf-footer"><span>' + esc(label) + '</span><span class="brand-foot"><span style="color:#C41E3A;">SINGAPORE</span> ACCOUNTANTS</span></div>';
+  }
+
+  function sectionHead(numLabel, title, color, icon) {
+    var badge = numLabel
+      ? '<div class="sec-num' + (color === 'navy' ? ' navy' : '') + '">' + numLabel + '</div>'
+      : '<div class="sec-num icon-only' + (color === 'navy' ? ' navy' : '') + '"><i class="ti ' + icon + '"></i></div>';
+    return '<div class="sec-head">' + badge + '<div class="sec-title">' + title + '</div></div>';
+  }
+
+  function cardRow(icon, bodyHTML, i) {
+    return '<div class="card-row ' + (i % 2 === 0 ? 'pink' : 'blue') + '">' +
+      '<div class="card-icon"><i class="ti ' + icon + '"></i></div>' +
+      '<div class="card-text">' + bodyHTML + '</div>' +
+    '</div>';
+  }
+
+  function factCard(icon, k, v, i) {
+    return cardRow(icon, '<strong>' + k + '</strong> -' + v, i);
+  }
+
+  function serviceCard(icon, title, desc, i) {
+    return '<div class="svc-card ' + (i % 2 === 0 ? 'pink' : 'blue') + '">' +
+      '<div class="card-icon"><i class="ti ' + icon + '"></i></div>' +
+      '<div class="svc-card-title">' + title + '</div>' +
+      '<div class="svc-card-desc">' + desc + '</div>' +
+    '</div>';
+  }
+
+  /* ══ SLIDE 1 - Cover ══ */
+  var coverTitle = isNewCo ? 'Company Incorporation, Compliance &amp; Advisory Proposal' : 'Compliance &amp; Advisory Proposal';
+  var coverSub = 'Prepared for your selected engagement scope' + (selectedServices.length ? ': ' + selectedServices.slice(0,3).join(', ') + (selectedServices.length > 3 ? ' and more' : '') : '');
+  var coverBars = [38,54,30,62,46,70,40,58,34,50,64,42].map(function(h,i){
+    return '<div style="width:26px;height:' + h + 'px;background:' + (i % 4 === 2 ? '#C41E3A' : '#002244') + ';border-radius:3px 3px 0 0;"></div>';
+  }).join('');
+  var slide1 =
+    slideOpen('cover') +
+      brandMark() +
+      '<div class="cover-body">' +
+        '<div class="cover-title">' + coverTitle + '</div>' +
+        '<div class="cover-sub">' + coverSub + '</div>' +
+        '<div class="cover-presented"><span class="cover-dot"></span>Presented by SG Accountants (SGA) -' + monthYear + '</div>' +
+      '</div>' +
+      '<div class="cover-bars">' + coverBars + '</div>' +
+    slideClose();
+
+  /* ══ SLIDE 2 - Contents ══ */
+  var tocLeft = [
+    ['','Executive Summary'],
+    ['1','Client Background'],
+    ['2','Scope of Services'],
+    ['3','Fee'],
+  ];
+  var tocRight = [
+    ['A','Annexure A - About SGA'],
+    ['B','Annexure B - Information Required from Client'],
+    ['','Next Steps'],
+  ];
+  function tocCol(items) {
+    return '<div class="toc-col">' + items.map(function(t){
+      return '<div class="toc-item"><span class="toc-num">' + t[0] + '</span><span>' + t[1] + '</span></div>';
+    }).join('') + '</div>';
+  }
+  var slide2 =
+    slideOpen() +
+      brandMark() +
+      sectionHead(null, 'Contents', 'red', 'ti-list-check') +
+      '<div class="two-col" style="margin-top:20px;">' + tocCol(tocLeft) + tocCol(tocRight) + '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE 3 - Executive Summary ══ */
+  var execRows = [
+    ['ti-flag', '<strong>This proposal</strong> covers ' + (selectedServices.length ? selectedServices.join(', ') : 'the services selected') + ' for a Singapore-based company, built around ACRA and IRAS compliance from day one.'],
+    ['ti-list-check', '<strong>Scope of services</strong> is fixed and itemised - each line in Section 2 has an identifiable fee, with optional and custom services quoted separately.'],
+    ['ti-cash', '<strong>Total engagement fee</strong> is ' + totalAmt + (hasOverride() ? ' (manually adjusted)' : '') + ', excluding GST and government fees, which are charged at cost.'],
+    ['ti-handshake', '<strong>Management retains</strong> all business and commercial decisions; SGA\'s role is to deliver the defined scope on the timeline set out in your delivery roadmap.'],
+  ];
+  var slide3 =
+    slideOpen() +
+      brandMark() +
+      sectionHead(null, 'Executive Summary', 'red', 'ti-report-analytics') +
+      '<div style="margin-top:18px;">' + execRows.map(function(r,i){ return cardRow(r[0], r[1], i); }).join('') + '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE 4 - Section 1: Client Background ══ */
+  var slide4 =
+    slideOpen() +
+      brandMark() +
+      sectionHead('1', 'Client Background', 'red') +
+      '<div style="margin-top:18px;">' + backgroundFacts.map(function(f,i){ return factCard(f[0], f[1], f[2], i); }).join('') + '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE 5 - Section 2: Scope of Services ══ */
+  var slide5 =
+    slideOpen() +
+      brandMark() +
+      sectionHead('2', 'Scope of Services', 'navy') +
+      (serviceCards.length
+        ? '<div class="svc-grid">' + serviceCards.map(function(s,i){ return serviceCard(s[0], s[1], s[2], i); }).join('') + '</div>'
+        : '<div class="pdf-note">No services selected yet.</div>') +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE 6 - Section 3: Fee ══ */
+  var feeLineItems = fees.phase1Items.map(function(item){ return {label:item.label, note:item.note, amount:'USD ' + item.amount.toLocaleString(), tag:'Included'}; });
+  if (fees.ep > 0) feeLineItems.push({label:'Employment Visa Application (×' + S.numApplicants + ')', note:'MOM submission, documentation and liaison', amount:'USD ' + fees.ep.toLocaleString(), tag:'Included'});
+  fees.optional.forEach(function(o){ feeLineItems.push({label:o.label, note:o.note, amount:'TBC', tag:'Separate LoE'}); });
+  fees.custom.forEach(function(c){ feeLineItems.push({label:c.label, note:c.note, amount:'TBC', tag:'On assessment'}); });
+  var feeTableHTML = feeLineItems.length
+    ? '<table class="pdf-table"><thead><tr><th>Service</th><th>Note</th><th class="r">Status</th><th class="r">Fee</th></tr></thead><tbody>' +
+      feeLineItems.map(function(f){
+        return '<tr><td>' + f.label + '</td><td class="muted">' + (f.note || '') + '</td>' +
+          '<td class="r"><span class="pdf-badge">' + f.tag + '</span></td><td class="r amt">' + f.amount + '</td></tr>';
+      }).join('') + '</tbody></table>'
+    : '<div class="pdf-note">No fee items to display yet.</div>';
+  var slide6 =
+    slideOpen() +
+      brandMark() +
+      sectionHead('3', 'Fee', 'red') +
+      '<div class="two-col" style="margin-top:16px;align-items:start;">' +
+        '<div>' + feeTableHTML + overrideNoteHTML + '</div>' +
+        '<div class="fee-total-card">' +
+          '<div class="fee-total-lbl">Total Engagement Fee</div>' +
+          '<div class="fee-total-amt">' + totalAmt + '</div>' +
+          '<div class="fee-total-sub">Excl. GST · government fees charged at cost' + ((fees.optional.length || fees.custom.length) ? ' · optional &amp; custom items separate' : '') + '</div>' +
+          '<div class="fee-ref-box"><div class="fee-ref-lbl">Quotation Reference</div><div class="fee-ref-num">' + qRef + '</div></div>' +
+        '</div>' +
+      '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE 7 - Annexure A: About SGA ══ */
+  var annexARows = [
+    ['ti-building', 'Singapore Accountants Pte Ltd (SGA) is a Singapore-based corporate services firm serving founders and businesses of all sizes across incorporation, compliance, tax, accounting and advisory.'],
+    ['ti-users-group', 'SGA acts as a single accountable point of contact across ACRA, IRAS and MAS-regulated matters - clients deal with one team, not multiple vendors.'],
+    ['ti-certificate', 'Credentials: ACRA-registered filing agent · IRAS e-filing agent · Singapore data residency.'],
+    ['ti-file-check', 'All engagements are governed by a signed Letter of Engagement, including a mutual NDA.'],
+  ];
+  var slide7 =
+    slideOpen() +
+      brandMark() +
+      sectionHead('A', 'Annexure A - About SGA', 'navy') +
+      '<div style="margin-top:16px;">' + annexARows.map(function(r,i){ return cardRow(r[0], r[1], i); }).join('') + '</div>' +
+      '<div class="cred-grid">' +
+        '<div class="cred-box"><div class="cred-n">200+</div><div class="cred-l">Companies served</div></div>' +
+        '<div class="cred-box"><div class="cred-n">8</div><div class="cred-l">Service areas</div></div>' +
+        '<div class="cred-box"><div class="cred-n">100%</div><div class="cred-l">On-time delivery</div></div>' +
+      '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ SLIDE(S) 8+ - Annexure B: Information Required from Client (paginated, 4 groups per slide) ══ */
+  var annexBSlides = [];
+  var groupChunks = [];
+  for (var gi = 0; gi < annexBGroups.length; gi += 4) groupChunks.push(annexBGroups.slice(gi, gi + 4));
+  if (groupChunks.length === 0) groupChunks = [[]];
+  function checklistCol(groups, colorClass) {
+    return '<div class="chk-col">' + groups.map(function(g){
+      return '<div class="chk-group"><div class="chk-group-title">' + g.title + '</div>' +
+        g.items.map(function(d){
+          return '<div class="chk-item"><span class="chk-dot ' + colorClass + '"></span><span>' + d.name + (d.notes ? ' <span class="muted">- ' + d.notes + '</span>' : '') + '</span></div>';
+        }).join('') +
+      '</div>';
+    }).join('') + '</div>';
+  }
+  groupChunks.forEach(function(chunk, ci) {
+    var left = [], right = [];
+    chunk.forEach(function(g, i){ (i % 2 === 0 ? left : right).push(g); });
+    var pageLbl = groupChunks.length > 1 ? ' (' + (ci + 1) + '/' + groupChunks.length + ')' : '';
+    annexBSlides.push(
+      slideOpen() +
+        brandMark() +
+        sectionHead('B', 'Annexure B - Information Required from Client' + pageLbl, 'red') +
+        (chunk.length
+          ? '<div class="two-col chk-wrap" style="margin-top:14px;">' + checklistCol(left, 'red') + checklistCol(right, 'navy') + '</div>'
+          : '<div class="pdf-note">No documents required yet - select your services on Page 1.</div>') +
+        pdfFooter(docTitle) +
+      slideClose()
+    );
+  });
+
+  /* ══ SLIDE - Next Steps ══ */
+  var nextSteps = [
+    ['1', 'SGA reviews your proposal', 'SGA reviews your selections and contacts you within 1 business day to confirm scope.'],
+    ['2', 'Engagement letter & NDA sent', 'Letter of Engagement (including NDA) is sent for e-signature.'],
+    ['3', 'Client workspace activates', 'Document upload portal, delivery tracker, and deadline reminders go live after signing.'],
+    ['4', 'Work begins', 'SGA begins the engagement per the agreed delivery roadmap.'],
+  ];
+  var slideNext =
+    slideOpen() +
+      brandMark() +
+      sectionHead(null, 'Next Steps', 'navy', 'ti-send') +
+      '<div class="next-row">' + nextSteps.map(function(s){
+        return '<div class="next-step"><div class="next-num">' + s[0] + '</div><div class="next-title">' + s[1] + '</div><div class="next-desc">' + s[2] + '</div></div>';
+      }).join('') + '</div>' +
+      pdfFooter(docTitle) +
+    slideClose();
+
+  /* ══ CSS - landscape slide-deck system ══ */
+  var css =
+    '*{box-sizing:border-box;margin:0;padding:0;}' +
+    '@page{size:13.333in 7.5in;margin:0;}' +
+    '@media print{html,body{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}head{display:none;}}' +
+    'body{font-family:"Inter",system-ui,sans-serif;color:#1a1a1a;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact;}' +
+
+    '.slide{width:13.333in;height:7.5in;position:relative;page-break-after:always;overflow:hidden;padding:0.55in 0.65in;}' +
+    '.slide:last-child{page-break-after:auto;}' +
+
+    '.brand-mark{position:absolute;top:0.45in;right:0.65in;text-align:right;line-height:1.25;}' +
+    '.brand-red{color:#C41E3A;font-weight:800;font-size:13px;letter-spacing:.05em;}' +
+    '.brand-navy{color:#002244;font-weight:800;font-size:13px;letter-spacing:.05em;}' +
+
+    /* Cover */
+    '.slide.cover{padding-top:1in;}' +
+    '.cover-body{max-width:820px;margin-top:60px;}' +
+    '.cover-title{font-size:40px;font-weight:800;color:#111;line-height:1.18;}' +
+    '.cover-sub{font-size:16px;color:#8A8A8A;margin-top:18px;max-width:700px;}' +
+    '.cover-presented{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13px;font-weight:700;color:#111;}' +
+    '.cover-dot{width:9px;height:9px;border-radius:50%;background:#C41E3A;flex-shrink:0;}' +
+    '.cover-bars{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:flex-end;gap:10px;padding:0 0.65in;height:80px;}' +
+
+    /* Section header */
+    '.sec-head{display:flex;align-items:center;gap:16px;}' +
+    '.sec-num{width:44px;height:44px;border-radius:50%;background:#C41E3A;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}' +
+    '.sec-num.navy{background:#002244;}' +
+    '.sec-num.icon-only i{font-size:18px;}' +
+    '.sec-title{font-size:26px;font-weight:800;color:#111;}' +
+
+    /* Card rows (fact / exec-summary style) */
+    '.card-row{display:flex;align-items:center;gap:14px;border-radius:12px;padding:14px 18px;margin-bottom:8px;}' +
+    '.card-row.pink{background:#FBEAEA;}' +
+    '.card-row.blue{background:#E9EDF4;}' +
+    '.card-icon{width:32px;height:32px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}' +
+    '.card-icon i{font-size:14px;color:#111;}' +
+    '.card-text{font-size:12.5px;line-height:1.6;color:#222;}' +
+    '.card-text strong{color:#111;}' +
+
+    /* Two-column layout */
+    '.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;}' +
+
+    /* Table of contents */
+    '.toc-col{display:flex;flex-direction:column;gap:14px;}' +
+    '.toc-item{display:flex;gap:12px;font-size:14px;color:#222;align-items:baseline;}' +
+    '.toc-num{color:#C41E3A;font-weight:800;min-width:16px;}' +
+
+    /* Service cards (2-col grid) */
+    '.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}' +
+    '.svc-card{border-radius:14px;padding:18px 20px;}' +
+    '.svc-card.pink{background:#FBEAEA;}' +
+    '.svc-card.blue{background:#E9EDF4;}' +
+    '.svc-card-title{font-size:14px;font-weight:700;color:#111;margin-top:10px;}' +
+    '.svc-card-desc{font-size:11.5px;color:#555;line-height:1.6;margin-top:6px;}' +
+
+    /* Fee table */
+    '.pdf-table{width:100%;border-collapse:collapse;}' +
+    '.pdf-table th{font-size:9px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;padding:8px 10px;border-bottom:1.5px solid #E8E4DF;text-align:left;}' +
+    '.pdf-table th.r,.pdf-table td.r{text-align:right;}' +
+    '.pdf-table td{padding:9px 10px;font-size:12px;color:#222;border-bottom:1px solid #F0EDE8;vertical-align:middle;}' +
+    '.pdf-table td.muted{color:#999;font-size:10.5px;}' +
+    '.pdf-table td.amt{font-weight:700;color:#002244;white-space:nowrap;}' +
+    '.pdf-badge{background:#E8F5E9;color:#1A6B3C;font-size:9px;font-weight:600;padding:2px 9px;border-radius:100px;white-space:nowrap;}' +
+    '.pdf-note{background:#FFFBF0;border-left:3px solid #C9A84C;border-radius:0 8px 8px 0;padding:9px 13px;font-size:10.5px;color:#7A5C00;line-height:1.6;margin-top:10px;}' +
+
+    /* Fee total card */
+    '.fee-total-card{background:#002244;border-radius:16px;padding:22px 24px;}' +
+    '.fee-total-lbl{color:rgba(255,255,255,.5);font-size:10px;text-transform:uppercase;letter-spacing:.6px;}' +
+    '.fee-total-amt{color:#fff;font-size:32px;font-weight:800;margin-top:6px;letter-spacing:-.5px;}' +
+    '.fee-total-sub{color:rgba(255,255,255,.4);font-size:10px;margin-top:6px;line-height:1.5;}' +
+    '.fee-ref-box{background:rgba(255,255,255,.08);border-radius:10px;padding:12px 14px;margin-top:16px;}' +
+    '.fee-ref-lbl{color:rgba(255,255,255,.4);font-size:9px;text-transform:uppercase;letter-spacing:.5px;}' +
+    '.fee-ref-num{color:#fff;font-size:15px;font-weight:700;letter-spacing:.5px;margin-top:3px;}' +
+
+    /* Annex A credential stats */
+    '.cred-grid{display:flex;gap:12px;margin-top:14px;}' +
+    '.cred-box{flex:1;border:1px solid #E8E4DF;border-radius:10px;padding:14px;text-align:center;background:#FAFAF8;}' +
+    '.cred-n{font-size:22px;font-weight:800;color:#002244;}' +
+    '.cred-l{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}' +
+
+    /* Annex B checklist */
+    '.chk-col{display:flex;flex-direction:column;gap:14px;}' +
+    '.chk-group-title{font-size:12px;font-weight:700;color:#111;margin-bottom:6px;}' +
+    '.chk-item{display:flex;align-items:flex-start;gap:8px;font-size:10.5px;color:#333;line-height:1.6;padding:3px 0;}' +
+    '.chk-dot{width:6px;height:6px;border-radius:50%;margin-top:6px;flex-shrink:0;}' +
+    '.chk-dot.red{background:#C41E3A;}' +
+    '.chk-dot.navy{background:#002244;}' +
+    '.chk-item .muted{color:#999;}' +
+
+    /* Next steps */
+    '.next-row{display:flex;gap:14px;margin-top:24px;}' +
+    '.next-step{flex:1;border:1px solid #E8E4DF;border-radius:12px;padding:16px;}' +
+    '.next-num{width:26px;height:26px;border-radius:50%;background:#C41E3A;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}' +
+    '.next-title{font-size:12px;font-weight:700;color:#111;margin-top:10px;}' +
+    '.next-desc{font-size:10px;color:#666;line-height:1.55;margin-top:5px;}' +
+
+    /* Footer */
+    '.pdf-footer{position:absolute;bottom:0.4in;left:0.65in;right:0.65in;display:flex;justify-content:space-between;font-size:9px;color:#999;}' +
+    '.brand-foot{font-weight:800;letter-spacing:.04em;color:#111;}';
+
+  var html =
+    '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
+    '<title>SGConnect Proposal ' + qRef + '</title>' +
+    '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">' +
+    '<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" rel="stylesheet">' +
+    '<style>' + css + '</style>' +
+    '</head><body>' +
+    slide1 + slide2 + slide3 + slide4 + slide5 + slide6 + slide7 +
+    annexBSlides.join('') +
+    slideNext +
+    '</body></html>';
+
+  /* ── Render in hidden iframe ── */
+  var old = document.getElementById('__pdf_frame__');
+  if (old) old.remove();
+  var iframe = document.createElement('iframe');
+  iframe.id = '__pdf_frame__';
+  iframe.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;border:none;';
+  document.body.appendChild(iframe);
+  var idoc = iframe.contentDocument || iframe.contentWindow.document;
+  idoc.open(); idoc.write(html); idoc.close();
+  setTimeout(function() {
+    try { iframe.contentWindow.focus(); iframe.contentWindow.print(); } catch(e) {}
+    setTimeout(function() { iframe.remove(); }, 5000);
+  }, 900);
+}
+
+
+/* ── NAVIGATION ── */
+function showLanding() {
+  document.getElementById('pg-ob').classList.remove('on');
+  document.getElementById('pg-landing').classList.add('on');
+}
+function startOB() {
+  document.getElementById('pg-landing').classList.remove('on');
+  document.getElementById('pg-ob').classList.add('on');
+  goPage(1);
+}
+function scrollTo(id) { document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
+</script>
+</body>
+</html>
